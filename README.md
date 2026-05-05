@@ -1,2 +1,4 @@
 # Welcome to our project !
-[Applied Labor Economics] Final Project
+
+This repository is structured as follows:
+- _00 Variable Bank_ : documents all variables used throughout the project.
