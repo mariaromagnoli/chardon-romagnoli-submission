@@ -69,9 +69,9 @@ install.packages(c("fixest", "dplyr", "tidyr", "ggplot2", "purrr", "haven", "bro
 
 For each listing cohort we estimate:
 
-$$\ln w_{ijrts} = \sum_{k \neq -1} \beta_k \bigl(\mathbf{1}[\text{group}_i = g] \times \mathbf{1}[\text{policy}_{jrt} = k]\bigr) + \mathbf{X}_{ijrt}'\,\gamma + \delta_{jrt} + \varepsilon_{ijrts}$$
+$$\ln w_{ijrts} = \sum_{g \neq -1} \beta_k \bigl(\mathbf{1}[\text{group}_i = g] \times \mathbf{1}[\text{policy}_{jrt} = k]\bigr) + \mathbf{X}_{ijrt}'\,\gamma + \delta_{jrt} + \varepsilon_{ijrts}$$
 
-where the fixed effects $\delta_{jrt}$ absorb occupation × region × year variation. The main coefficient of interest is the delta-method difference $\Delta_k = \hat\beta_k^{\text{non-EEA}} - \hat\beta_k^{\text{EEA}}$, which isolates the monopsony effect from both the shortage premium and taste-based discrimination.
+where the fixed effects $\delta_{jrt}$ absorb occupation × region × year variation and g=-1 corresponds to the French group. The main coefficient of interest is the delta-method difference $\Delta_k = \hat\beta_k^{\text{non-EEA}} - \hat\beta_k^{\text{EEA}}$, which isolates the monopsony effect from both the shortage premium and taste-based discrimination.
 
 See the paper for full details on identification assumptions, sample construction, and robustness checks.
 
