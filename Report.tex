@@ -1,0 +1,234 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,
+            top=1.5cm, bottom=1.5cm,
+            left=1.5cm,  right=1.5cm]{geometry}
+
+\usepackage{setspace}
+\usepackage{microtype}
+\usepackage[authoryear]{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf, justification=justified}
+
+\usepackage[colorlinks=true,
+            linkcolor=black,
+            citecolor=blue,
+            urlcolor=black]{hyperref}
+
+
+\usepackage{footmisc}
+
+
+\author{Maria Romagnoli and Lisa Chardon--Denizot}
+\title{Applied labour economics}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\section{Introduction}
+\section{2}
+\section{3}
+\section{Model}
+\label{sec:model}
+\subsection{Specification}
+
+Our empirical strategy builds on a stacked difference-in-differences design,
+following the approach advocated by \citet{Cengiz2019} and more recently
+formalized for multi-period settings by \citet{Baker2022}.\footnote{%
+  The stacked design constructs a separate clean "mini-panel" for each
+  listing event (2021, 2024, and 2025) defined by a window
+  around the relevant reform, and then pools these sub-experiments.
+  This avoids the contamination of late-treated units serving as controls
+  for early-treated units that plagues two-way fixed-effects estimators
+  in heterogeneous-treatment settings \citep{Callaway2021, Sun2021}.}
+For practical estimation, rather than a triple-differences specification,
+we estimate two separate difference-in-differences regressions
+and recover the quantity of interest by comparing the resulting coefficients using the linearity of
+conditional expectation.
+
+For each listing cohort $c \in \{2021, 2024, 2025\}$, we estimate the
+following stacked event-study regression:
+
+\begin{equation}
+  \ln w_{ijrts} =
+    \sum_{g \neq -1} \beta_k \bigl(\mathbf{1}[\text{group}_i = g]
+      \times \mathbf{1}[\text{policy}_{jrt} = k]\bigr)
+    + \mathbf{X}_{ijrt}'\,\gamma
+    + \delta_{jrt}
+    + \varepsilon_{ijrts},
+  \label{eq:eventstudy}
+\end{equation}
+
+\noindent
+where $w_{ijrts}$ is the monthly base wage of worker $i$ in occupation $j$,
+region $r$, at time $t$, belonging to stacked sub-experiment $s$.
+The variable $\text{policy}_{jrt} = k$ indexes event time relative to the first
+listing of occupation $j$ in region $r$, normalized so that $k = -1$ is the
+omitted group (French). $\text{group}_i \in
+\{\text{non-EEA},\, \text{EEA},\, \text{French}\}$ identifies the
+nationality group of the worker, with French nationals serving as the
+reference category.
+
+The individual control vector $\mathbf{X}_{ijrt}$ includes sex, diploma
+level, and cumulative experience in months. The fixed-effect structure
+$\delta_{jrt}$ absorbs occupation-by-region-by-year variation, which is
+the most demanding specification able to control for time-varying labour
+scarcity at the occupation-region level, i.e. the shortage premium
+effect. Because this high-dimensional fixed
+effect is mechanically collinear with the listing indicator, we repeat the
+analysis with coarser fixed-effect sets as robustness checks.
+
+The regression is estimated separately for each listing cohort using the
+\texttt{feols} function from the \texttt{fixest} package in \textsf{R}
+\citep{Berge2018}. Standard errors are clustered at the
+occupation-by-region level to account for within-cluster correlation in
+both treatment assignment and wages.
+
+\subsection{Parameter of interest and identification}
+
+Let $\hat\beta_k^{\text{non-EEA}}$ and $\hat\beta_k^{\text{EEA}}$ denote
+the estimated event-study coefficients for non-EEA and EEA workers
+respectively, each relative to French nationals. The parameter of interest
+at event time $k$ is the differential post-listing wage effect:
+
+\begin{equation}
+  \Delta_k =
+  \hat\beta_k^{\text{non-EEA}} - \hat\beta_k^{\text{EEA}}.
+  \label{eq:delta}
+\end{equation}
+
+Under our hypothesis, we expect $\Delta_k < 0$ for $k \geq 0$:
+non-EEA workers should experience a relative wage markdown upon listing,
+once the EEA coefficient absorbs any shortage premium accruing to both
+groups. The statistical significance of $\Delta_k$ is assessed via the
+delta method, which yields an asymptotically valid variance estimate for
+linear combinations of estimated coefficients.
+
+Identification rests on four assumptions.
+The primary concern is parallel pre-trends: absent listing, non-EEA and
+EEA wage trajectories should be parallel to those of French nationals
+within the same occupation-region cell. This assumption is testable and
+forms the main diagnostic reported below. A second threat is endogenous
+worker selection into listed occupations following the reform; to the
+extent that selection is positive on unobservables, any estimated markdown
+is a lower bound on the true monopsony effect. Third, we assume no general
+equilibrium spillovers from listed to unlisted occupations at the
+occupation-region level. Fourth, we treat listing events as locally
+exogenous, conditional on fixed effects.
+
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Event-study estimates}
+
+Figure %Include event studies graphs%
+display the event-study
+graphs for the 2021, 2024, and 2025 listing cohorts. Each figure presents
+three panels: the estimated $\hat\beta_k^{\text{non-EEA}}$ series (non-EEA
+vs.\ French), the estimated $\hat\beta_k^{\text{EEA}}$ series (EEA
+vs.\ French), and the implied differential $\Delta_k$ computed via the
+delta method. Ninety-five-percent confidence intervals are reported
+throughout.
+
+For all three cohorts, the pre-treatment coefficients are statistically
+indistinguishable from zero and display no discernible trend, supporting
+the parallel pre-trends assumption. This lends credibility to the
+identification strategy, even though formal pre-trend tests cannot be
+interpreted as proof of the counterfactual assumption.
+
+In the post-treatment periods, neither $\hat\beta_k^{\text{non-EEA}}$ nor
+$\hat\beta_k^{\text{EEA}}$ departs significantly from zero for any cohort.
+Point estimates are small in magnitude and confidence intervals are wide,
+which may reflect genuine heterogeneity in
+treatment effects across regions and occupations.
+
+\subsection{Differential effects and delta-method tests}
+
+Table %Include results table
+reports the post-listing average of $\Delta_k$ for
+each cohort, together with the corresponding standard error and $p$-value
+obtained from the delta method.
+
+For the 2021 cohort, no statistically significant differential is detected.
+Point estimates of $\Delta_k$ fluctuate around zero in the post-period,
+and the null hypothesis $H_0: \Delta_k = 0$ cannot be rejected at any
+conventional significance level.  Results for the 2024 cohort are qualitatively similar, with no significant
+differential wage effect for non-EEA relative to EEA workers following
+listing.
+
+The 2025 cohort yields a weakly significant result at the ten-percent
+level for certain post-listing periods. Interestingly, the sign of
+$\Delta_k$ is \emph{positive} in this cohort: the point estimate suggests
+a slightly higher relative wage for non-EEA workers following listing,
+compared to their EEA counterparts. This finding is, if anything,
+inconsistent with the monopsony hypothesis; it is more plausibly
+attributable to sampling noise given the short post-treatment window
+available in the most recent vintage of ForCE.
+
+\subsection{Robustness}
+
+Coarser fixed-effect specifications (e.g., replacing occupation-by-region-by-year
+with occupation-by-year fixed effects) do not materially alter the conclusions.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This paper investigates whether French shortage-occupation lists create
+rents that allow firms to depress the wages of non-EEA workers,
+whose legal status is tied to remaining in a listed occupation. We embed
+this question in a Nash bargaining framework predicting a wage differential
+between non-EEA and EEA or French workers following listing, and test it
+using a stacked event-study design on ForCE administrative data covering
+the 2021, 2024, and 2025 iterations of the policy.
+
+Our main finding is a null result: we do not detect a statistically
+significant wage markdown for non-EEA workers relative to EEA workers
+following occupation listing, for any of the three reform cohorts
+examined. Pre-treatment parallel trends hold throughout, suggesting that
+the empirical design is internally valid. The absence of a significant
+post-treatment differential is therefore not a mechanical artefact of
+the estimation strategy.
+
+Several interpretations of this null are plausible. First, firms may
+not exploit workers' permit-conditioned immobility in the short run,
+either because wage-setting in these occupations is governed by
+collective agreements that limit bilateral bargaining, or because
+reputational concerns discourage overt wage discrimination. Second,
+non-EEA workers in shortage occupations may self-select on unobservable
+productivity that offsets the monopsony markdown, generating an upward
+bias that masks a negative structural effect. Third, the window available
+for the most recent cohorts (in particular 2025) is too short to
+detect dynamic wage effects that may materialise over multiple years.
+
+Our results speak to a growing literature on institutionally induced
+monopsony \citep{Naidu2016, Amior2024}. Unlike the UAE kafala setting
+studied by \citet{Naidu2016}, the French shortage-list mechanism does not
+prohibit job mobility outright; it merely raises its costs. Our null
+result is consistent with the hypothesis that moderate rather than
+absolute mobility restrictions are insufficient to generate detectable
+wage markdowns in a high-regulation labour market where sectoral
+bargaining compresses wage dispersion.
+
+Future work should extend the observation window, particularly for the
+2024 and 2025 cohorts, as longer panels will improve power and allow
+examination of the dynamic path of wage effects. Complementing the wage
+analysis with evidence on employment margins (whether listing affects
+non-EEA hiring rates or contract duration differentially) would provide
+a richer picture of how firms respond to the policy. Finally, exploiting
+variation in the stringency of local enforcement or in the share of
+workers covered by collective agreements could help disentangle the
+mechanisms underlying the null wage result.
+\bibliography{biblio}
+\bibliographystyle{apalike}
+
+\end{document}
