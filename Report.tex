@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[9pt]{article}
 \usepackage[a4paper,
             top=1.5cm, bottom=1.5cm,
             left=1.5cm,  right=1.5cm]{geometry}
@@ -19,9 +19,9 @@
 \captionsetup{font=small, labelfont=bf, justification=justified}
 
 \usepackage[colorlinks=true,
-            linkcolor=black,
+            linkcolor=blue,
             citecolor=blue,
-            urlcolor=black]{hyperref}
+            urlcolor=blue]{hyperref}
 
 
 \usepackage{footmisc}
@@ -30,18 +30,280 @@
 \author{Maria Romagnoli and Lisa Chardon--Denizot}
 \title{Applied labour economics}
 \date{\today}
-
 \begin{document}
-
 \maketitle
+
 \section{Introduction}
-\section{2}
-\section{3}
+\label{sec:intro}
+
+
+France maintains regional lists of shortage occupations (\textit{métiers en tension}),
+which allow employers to hire non-European Economic Area (non-EEA) nationals without
+the standard labour market test requiring proof that no domestic worker is available.
+Since the 2024 immigration law \citep{ParFr2024}, residence permit renewals and
+regularisation applications for non-EEA workers have been made contingent upon
+employment in a listed occupation \citep{ServicePublic2025}. This creates a sharp
+asymmetry: for a non-EEA worker, leaving a listed job entails the risk of losing
+legal status, effectively collapsing their outside option to undocumented work or
+the costly administrative process of obtaining a new permit. French nationals and
+EEA citizens face no such constraint and retain the ability to switch employers or
+occupations freely.
+
+We ask whether firms exploit this asymmetry to set wages below competitive levels
+for non-EEA workers in listed occupations, a monopsony effect induced by
+the institutional design of the policy. Answering this question requires
+disentangling three primary forces that simultaneously shape wages in shortage
+occupations. First, labour scarcity may push firms to offer a shortage premium
+to attract workers of any nationality. Second, taste-based discrimination may
+independently depress non-EEA wages regardless of bargaining power. Third,
+permit-conditioned immobility may generate a genuine monopsony markdown on top of
+these two effects. Beyond these three channels, the policy also operates through
+three additional mechanisms: a hiring cost reduction effect (the waiver of the
+labour market test may allow employers to capture surplus from non-EEA workers, with
+ambiguous wage consequences); a competition effect (listing may attract more
+non-EEA workers into the occupation, increasing labour supply and depressing wages);
+and a composition effect (listing may attract a different type of non-EEA
+worker post-treatment, confounding the wage comparison). Separating the monopsony
+channel from these five confounds is the central methodological challenge of
+this paper.
+
+We address it using a stacked difference-in-differences design with event studies,
+comparing wage trajectories of non-EEA and EEA workers around listing events
+relative to French nationals, on a culturally matched sample designed to minimise
+contamination by a taste-based discrimination channel.
+Our data cover the 2021, 2024, and 2025 iterations of the policy and are drawn
+from the ForCE administrative database. We complement this main analysis with a
+triple-differences regression for the 2021 reform, which provides a first estimate
+of the monopsony effect in a simpler framework. Our main finding from the stacked
+design is a precisely estimated null: we detect no statistically significant wage
+markdown for non-EEA workers relative to their EEA counterparts following occupation
+listing, for any reform cohort.
+
+\section{Related Literature}
+\label{sec:lit}
+
+This paper sits at the intersection of three strands of literature: the economics of
+employer monopsony, the labour market consequences of immigration policy, and the
+measurement of wage discrimination.
+
+\paragraph{Institutionally induced monopsony.}
+A growing body of work shows that labour market institutions generate monopsony
+power by restricting worker mobility. The most direct evidence comes from the Gulf
+States, where \citet{Naidu2016} exploit a 2011 reform relaxing the UAE's
+\textit{kafala} sponsorship system to show that, prior to reform, migrant workers
+received only 51\% of their estimated marginal product; relaxing mobility constraints
+raised this share to 72\%. The mechanism (legal status tied to a single employer)
+is structurally analogous to the French shortage-list regime, although the
+French constraint is partial rather than absolute. \citet{Amior2024} provide
+complementary evidence on German administrative data, showing that immigration
+strengthens firm wage-setting power at the bottom of the pay distribution. Our
+contribution is to test whether an occupation-level mobility restriction of moderate
+intensity produces similar effects in a high-regulation European labour market.
+
+\paragraph{Selective immigration policy and native--migrant wage gaps.}
+The paper most closely related to ours is \citet{Signorelli2024}, which evaluates
+the first iteration of the French shortage list policy introduced in 2008. Using a
+difference-in-differences strategy, she finds that the policy-induced influx of
+migrant workers depressed migrant wages more than native wages, a differential
+consistent with our monopsony hypothesis. We extend her analysis to the 2021--2025
+period, exploit three distinct reform cohorts, and bring an explicit conceptual
+framework that separates the monopsony channel from the shortage premium and
+discrimination channels. More broadly, our work relates to studies of how immigration
+policy shapes labour market outcomes \citep{Peri2012, Dustmann2017}, with a specific
+focus on wage consequences for migrant workers themselves rather than for native
+incumbents.
+
+\paragraph{Discrimination and wage penalties.}
+Taste-based discrimination \citep{Becker57} can generate wage penalties that mimic
+monopsony markdowns but operate through entirely different mechanisms. \citet{Glover2017}
+provide quasi-experimental evidence from French grocery stores that manager bias against
+minority workers produces measurable productivity and wage gaps. Accounting for this
+channel is essential for causal interpretation. Our culturally matched sample strategy
+(using EEA workers who share broad cultural backgrounds with their non-EEA
+counterparts but face no permit constraint as an auxiliary control group) is
+designed precisely to absorb time-invariant discrimination. Time-varying discrimination
+is further addressed by the sample construction, which pairs nationalities on
+ethno-linguistic proximity.
+
+
+\section{Data}
+\label{sec:data}
+
+
+\subsection{Administrative data: ForCE}
+
+Our primary data source is ForCE (\textit{Formation, Chômage et Emploi}),
+a French administrative database managed by France Travail that links unemployment
+spells, job contracts, and individual characteristics for all workers registered with
+the public employment service. We use the 2025S1 vintage and focus on the period
+2019--2025, which provides at least one pre-reform year before each of the three
+listing events.
+
+We draw on two tables within ForCE. The \textit{Fichier Historique (FH)} provides
+worker-level socio-demographic characteristics recorded at the unemployment-spell
+level, including nationality (\texttt{NATION}), sex, date of birth, diploma level,
+qualification, and cumulative experience in the target occupation (\texttt{ROME} code).
+When a characteristic varies across spells, we retain the most recent observed value.
+The Mouvement de Main-d'{\OE}uvre (MMO) records contract-level information,
+including contract start and end dates, establishment identifier, full- or part-time
+status, base monthly salary, and base salary for a full month of work. We restrict
+MMO to contracts longer than 30 days beginning after January 2019. Department codes
+in MMO are used to recover the region of each contract. The two tables are merged on
+the \texttt{force\_id} unique identifier.
+
+Because a worker may hold multiple contracts over the observation window, the final
+dataset is structured at the contract level. Worker characteristics from FH
+are attached to each contract via the ForCE key, so workers with multiple contracts
+appear repeatedly. Specifications weighted at the worker level are reported as a
+robustness check. The final sample covers 60,214,080 contracts for French workers,
+681,184 for EEA workers, and 884,757 for non-EEA workers (Table %add balance checks).
+
+\subsection{Descriptive evidence}
+
+Table balance checks presents balance statistics by treatment and permit status.
+Several patterns are noteworthy. First, workers in listed occupations are on average
+older, earn higher wages (€1,771 vs.\ €1,588 per month), and are more likely to be
+male (61\% vs.\ 49\%), consistent with listed occupations being concentrated in
+skilled trades and technical services. Second, non-EEA workers earn less on average
+than both French nationals and EEA workers (€1,560 vs.\ €1,720 and €1,653,
+respectively), but report more experience (5.59 years vs.\ 4.30 and 4.08). This
+experience premium without a commensurate wage premium is suggestive of a wage gap
+that cannot be explained by observable human capital alone, and motivates the more
+careful causal analysis that follows. Third, EEA and non-EEA samples are
+substantially smaller than the French reference group, which limits statistical power
+for the culturally matched subsamples.
+
+Figure %add boxplot
+displays the distribution of monthly wages by nationality
+group and listing status. Wages in listed occupations are higher for all groups,
+confirming the existence of a shortage premium. The wage gap between listed and
+unlisted occupations is visually similar across groups, suggesting that the shortage
+premium is not substantially heterogeneous by permit status at the raw data level.
+Recovering the monopsony component net of this premium requires the causal designs
+described below.
+
+\subsection{Nationality classification and culturally matched samples}
+
+Non-EEA workers are identified through the \texttt{NATION} codes in FH. Raw
+non-EEA versus EEA comparisons conflate the permit-constraint channel with cultural,
+religious, or human-capital differences that may independently affect wages. We
+restrict the main estimation sample to culturally matched pairs of non-EEA
+and EEA nationalities that share broad ethno-linguistic or historical backgrounds
+but differ in permit status. Table nationalities in the Appendix details four
+matched pairs: (i) former Yugoslav nationalities (Montenegro, Serbia, Bosnia and
+Herzegovina, Kosovo, North Macedonia) matched with Croatian and Slovenian nationals;
+(ii) the same Yugoslav group matched with Bulgarian and Romanian nationals;
+(iii) Turkish nationals matched with Greek, Bulgarian, Romanian, and Cypriot nationals
+(with a residual religious bias caveat); and (iv) residual European non-EEA nationals
+matched with Baltic and Central European EEA nationals. French nationals serve as
+the reference group throughout.
+
+\subsection{Listing status}
+
+Listing status at the occupation-region-year level is constructed from the
+\textit{arrêtés} published in the \textit{Journal Officiel de la République
+Française} for the 2021, 2024, and 2025 reforms. Shortage lists are defined at
+the \textit{famille professionnelle} (FAP) code level in the policy texts; we map
+FAP codes to the PCS codes recorded in MMO to assign listing status to each
+contract. Table listing summarises the number of listed occupations by
+region and reform year. Substantial regional variation exists: Île-de-France went
+from 30 listed occupations in 2021 to 17 in 2025, while PACA moved from 26 to 30.
+This variation, across occupations, regions, and time, is the identifying variation
+exploited by our empirical designs.
+
 \section{Model}
 \label{sec:model}
-\subsection{Specification}
 
-Our empirical strategy builds on a stacked difference-in-differences design,
+\subsection{Conceptual framework}
+
+We model wages as the outcome of Nash bargaining between firms and workers.
+The negotiated wage is a weighted average of the firm's outside option (zero profit)
+and the worker's outside option, with the firm's bargaining weight increasing in the
+tightness of labour supply. For French nationals and EEA workers, the outside option
+approximates the competitive market wage, since both groups can freely switch
+employers or occupations. For non-EEA workers in listed occupations, leaving the
+job entails forfeiting the residence permit, so the effective outside option is
+undocumented work or the risk-weighted cost of obtaining a new permit. Under this framework, listing an occupation generates
+a divergence in bargaining positions: the firm can extract more surplus from non-EEA
+workers than from EEA workers doing the same job, producing a wage markdown.
+Whether this markdown is empirically detectable depends on the magnitude of the
+bargaining power differential and the countervailing effects described above.
+
+Table~\ref{tab:mechanisms} summarises all six mechanisms through which listing may
+affect the wages of non-EEA workers relative to other groups, and how each is
+handled by our identification strategy.
+
+
+
+\begin{table}[H]
+
+    \centering
+\caption{Mechanisms, directions, and identification.}
+\label{tab:mechanisms}
+\small
+\begin{tabular}{p{2.5cm} p{5.5cm} p{1.2cm} p{4cm}}
+\toprule
+Effect & Mechanism & Direction & Status in our design \\
+\midrule
+Monopsony       & Listing collapses non-EEA outside option; EEA workers unaffected
+                & $\downarrow$ & Target parameter \\[4pt]
+Competition     & More non-EEA workers enter listed occupations post-listing,
+                  increasing labour supply
+                & $\downarrow$ & Confounded \\[4pt]
+Hiring cost     & Labour market test waived for non-EEA only; employer captures
+                  surplus
+                & ambiguous & Confounded \\[4pt]
+Composition     & Listing attracts a different type of non-EEA worker post-treatment
+                & $\downarrow$ & Confounded \\[4pt]
+Shortage        & Labour scarcity raises wages for all workers
+                & $\uparrow$ & Differenced out by EEA coefficient \\[4pt]
+Discrimination  & Taste-based penalties depress non-EEA wages;
+                  if time-invariant, absorbed by FE;
+                  if time-varying, managed by matched sample
+                & $\downarrow$ & Largely controlled \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\footnotesize\textit{Notes:} $\downarrow$ indicates downward pressure on non-EEA wages
+relative to other groups; $\uparrow$ indicates upward pressure for all groups.
+\end{minipage}
+\end{table}
+
+
+\subsection{Specification A: triple differences}
+
+As a first pass, we estimate a triple-differences (DDD) regression for the 2021
+reform. The specification compares wage changes across three dimensions: nationality
+group, treatment status (occupation-region cells listed after April 2021 versus
+those that were not), and the post-2021 period. Formally:
+
+\begin{align}
+\ln w_{ijrt} = \;& \alpha + \beta_1 \mathrm{EEA}_i + \beta_2 \mathrm{NonEEA}_i
+  + \beta_3 \mathrm{post}_t + \mathbf{X}'_{ijrt}\gamma \notag \\
+  &+ \beta_4 (\mathrm{French}_i \times \mathrm{treatment}_{jr} \times \mathrm{post}_t)
+   + \beta_5 (\mathrm{EEA}_i \times \mathrm{treatment}_{jr} \times \mathrm{post}_t) \notag \\
+  &+ \beta_6 (\mathrm{NonEEA}_i \times \mathrm{treatment}_{jr} \times \mathrm{post}_t)
+   + \delta_{jr} + \delta_t + \varepsilon_{ijrt},
+\label{eq:ddd}
+\end{align}
+
+\noindent where the monopsony parameter of interest is $\beta_6$: the differential
+wage change for non-EEA workers in newly-listed cells after April 2021, relative to
+French nationals in the same cells. The coefficient $\beta_5$ provides a placebo-style
+check: under the hypothesis that only permit-constrained workers are affected,
+$\beta_5$ should be zero. Individual controls $\mathbf{X}_{ijrt}$ include sex, diploma,
+and experience in months. Fixed effects $\delta_{jr}$ absorb time-invariant
+occupation-region heterogeneity; $\delta_t$ absorbs common year effects. Standard
+errors are clustered at the occupation-by-region level.
+
+\subsection{Specification B: stacked event-study}
+
+The DDD estimate may be contaminated by pre-existing differential trends and by
+the use of late-listed occupation-region cells as implicit controls for earlier
+cohorts, a well-documented source of bias in staggered DiD settings
+\citep{Callaway2021, Sun2021}.
+Therefore, ou preferred empirical strategy builds on a stacked difference-in-differences design,
 following the approach advocated by \citet{Cengiz2019} and more recently
 formalized for multi-period settings by \citet{Baker2022}.\footnote{%
   The stacked design constructs a separate clean "mini-panel" for each
@@ -50,8 +312,7 @@ formalized for multi-period settings by \citet{Baker2022}.\footnote{%
   This avoids the contamination of late-treated units serving as controls
   for early-treated units that plagues two-way fixed-effects estimators
   in heterogeneous-treatment settings \citep{Callaway2021, Sun2021}.}
-For practical estimation, rather than a triple-differences specification,
-we estimate two separate difference-in-differences regressions
+For practical estimation,we estimate two separate difference-in-differences regressions
 and recover the quantity of interest by comparing the resulting coefficients using the linearity of
 conditional expectation.
 
@@ -125,10 +386,38 @@ equilibrium spillovers from listed to unlisted occupations at the
 occupation-region level. Fourth, we treat listing events as locally
 exogenous, conditional on fixed effects.
 
-
 \section{Results}
 \label{sec:results}
 
+
+\subsection{Triple-differences estimates}
+
+Table results reports the DDD estimates for the 2021 reform. The baseline
+wage gaps are substantial: EEA workers earn approximately 6.3\% more than French
+nationals conditional on controls, while non-EEA workers earn 4.6\% less
+($\hat\beta_1 = 0.063$, $\hat\beta_2 = -0.046$, both significant at the 0.1\%
+level). The listing effect for French workers ($\hat\beta_4$) is negative and
+significant ($-0.026$, $p = 0.002$), suggesting that French workers in newly-listed
+cells experienced a relative wage decline after 2021, possibly reflecting general
+equilibrium effects of increased labour supply in those occupations.
+
+The EEA placebo coefficient $\hat\beta_5$ is small and insignificant
+($-0.005$, $p = 0.837$), consistent with the hypothesis that EEA workers, who
+are unaffected by the permit constraint, did not experience a differential wage
+change upon listing. The non-EEA coefficient $\hat\beta_6$ is negative and
+significant at the 5\% level ($-0.041$, $p = 0.048$), with a magnitude suggesting
+a 4.1\% wage markdown relative to French workers in the same occupation-region
+following listing. This estimate is broadly consistent with the monopsony hypothesis.
+
+However, this result must be interpreted with caution. The pre-trend analysis
+reveals that treated and control
+cells were already on diverging wage trajectories before the reform, particularly for
+EEA and non-EEA subgroups, which exhibit high month-to-month volatility attributable
+to small sample sizes. This pre-existing divergence implies that the parallel trends
+assumption underlying the DDD is likely violated, and the $\hat\beta_6$ estimate
+may partially capture a pre-existing gap rather than a causal listing effect.
+
+%% Add results 24 and 25
 \subsection{Event-study estimates}
 
 Figure %Include event studies graphs%
@@ -228,7 +517,7 @@ a richer picture of how firms respond to the policy. Finally, exploiting
 variation in the stringency of local enforcement or in the share of
 workers covered by collective agreements could help disentangle the
 mechanisms underlying the null wage result.
-\bibliography{biblio}
-\bibliographystyle{apalike}
 
+    \bibliography{biblio}
+    \bibliographystyle{apalike}
 \end{document}
