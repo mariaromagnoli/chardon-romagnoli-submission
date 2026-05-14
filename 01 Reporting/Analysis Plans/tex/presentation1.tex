@@ -1,0 +1,370 @@
+\documentclass[aspectratio=169,10pt,xcolor={dvipsnames}]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern, textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{appendix}
+\usepackage{babel}
+\usepackage{ragged2e}
+\usepackage{graphics}
+\usepackage{dsfont}
+\usepackage{subcaption}
+\usepackage{chngcntr}
+\usepackage{mathabx}
+\usepackage{soul}
+\usepackage{amsmath,amsthm}
+\usepackage{multirow}
+\usepackage{booktabs, threeparttable}
+\usepackage{tabularx,booktabs}
+\usepackage{ltablex,booktabs}
+\usepackage{bm}
+\counterwithin{subfigure}{figure}
+\usetheme{default}
+\usepackage{appendixnumberbeamer}
+\usefonttheme[onlymath]{serif}
+%\usecolortheme{spruce}
+
+%Colours
+\definecolor{shaded}{RGB}{153, 194, 173}
+\definecolor{violet}{RGB}{51, 51, 178}
+\definecolor{titlecolor}{RGB}{73, 156, 94}
+\definecolor{titlecolor2}{RGB}{10, 74, 38}
+\definecolor{alerted}{RGB}{51, 133, 92}
+\definecolor{alerted1}{RGB}{229, 240, 235}
+\definecolor{box}{RGB}{196, 224, 199}
+\setbeamercolor{alerted text}{fg=alerted}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{item}{fg=shaded}
+\setbeamercolor{block body alerted}{use=structure,fg=black,bg=alerted1}
+\setbeamercolor{block title alerted}{use=structure,fg=white,bg=titlecolor}
+\setbeamercolor{section in head/foot}{bg=white,fg=shaded}
+\setbeamercolor{frametitle}{fg=alerted,bg=white}
+\setbeamercolor{block body}{bg=structure!10}
+\setbeamercolor{block title}{bg=structure!20}
+\setbeamercolor{block body example}{bg=green!10}
+\setbeamercolor{block title example}{bg=green!20}
+
+%Fonts
+\setbeamerfont{subsection in toc}{size={\fontsize{7}{10}}}
+\setbeamerfont{author in sidebar}{size={\fontsize{5}{8}}}
+\setbeamerfont{section in sidebar}{size=\fontsize{5}{6}\selectfont}
+
+%Theme
+\setbeamertemplate{itemize item}{\scalebox{0.8}\textbullet}
+\setbeamertemplate{itemize subitem}{\scalebox{0.4}\textbullet}
+\setbeamertemplate{itemize items}[default]
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+\newenvironment{sitemize}{\begin{itemize}[label=$\to$]}{\end{itemize}}
+\setbeamersize
+{
+	text margin left=1.5cm,
+	text margin right=1.5cm
+}
+
+\begin{document}
+
+	\begin{frame}
+		\thispagestyle{empty}
+		\begin{center}
+			\textit{Applied Labor Economics}\\
+			{ \huge
+				\vspace{1.3cm}
+				\alert{Shortage Lists and Monopsony}}\\
+			\vspace{0.6cm} {\large \alert{Project Proposal}} \\
+			\vspace{1.3cm}
+			\textbf{Lisa Chardon--Denizot, Maria Romagnoli} \\
+			\vspace{0.8cm}
+		 	April 3rd, 2026
+		\end{center}
+	\end{frame}
+
+\section*{Context}
+
+\begin{frame}{Context - \textit{research question}}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+
+\alert{\textbf{métiers en tension}}
+\begin{itemize}
+    \item Easier hiring of non-EEA workers in occupations facing labor shortages.
+    \item List varies by \alert{region} and \alert{occupation}. 
+    \item Three updates (2008, 2021, 2025).
+\end{itemize}
+
+\vspace{0.4cm}
+
+\alert{\textbf{hypothesis}}
+\begin{itemize}
+    \item Incentive for people seeking better status stability to work in shortage occupations.
+    \item Employers know this $\rightarrow$ price wages down.
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+
+\begin{alertblock}{research question}
+Do non-EEA workers accept lower wages in shortage occupations because they give access to better legal status?
+\end{alertblock}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{nanterre.png}
+\end{figure}
+
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Context - \textit{research question}}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{somejobs.png}
+\end{figure}
+\end{frame}
+
+\section*{Mechanism}
+
+\begin{frame}{Mechanism - \textit{quick sketch}}
+
+	\begin{itemize}
+		\item Let's tie our reasoning to a job search model with Nash bargaining.
+		\item The wage level is the result of: \\
+		\vspace{0.2cm}
+	
+		$w = \underbrace{(1-\beta)}_{\substack{\text{firm power}}} \cdot \underbrace{\bar{w}_i}_{\substack{\text{worker's outside option}}} + \underbrace{\beta}_{\substack{\text{worker power}}}  \cdot \underbrace{p}_{\substack{\text{total surplus}}}$
+	\end{itemize}
+
+	\vspace{0.3cm}
+
+	\begin{itemize}
+	\item Three worker types: natives, EEA workers, and non-EEA workers.
+
+	\begin{itemize}
+		\item \alert{natives and eea workers:} outside option is market wage. \\ 
+		\vspace{0.05cm}
+		$\bar{w}_{\text{natives}} \approx \bar{w}_{\text{eea}} = \bar{w}^{*}$
+		\vspace{0.2cm}
+		\item \alert{non-eea workers:} outside option is undocumented work. \\
+		\vspace{0.05cm}
+		$\bar{w}_{non eea} = \max(\bar{w}^{\text{undocumented}}, \underbrace{w^{\text{other}}-\text{permit cost}}_{\text{changing jobs}}) \ll \bar{w}^{*}$
+	\end{itemize}
+
+	\vspace{0.2cm}
+	\item Different \alert{outside options} $\rightarrow$ wage gap ? \\
+	\vspace{0.2cm}
+	$\Delta w \equiv w_{eea} - w_{non-eea} = (1 - \beta)(\bar{w}^* - \bar{w}_{non-eea}) > 0$
+	\end{itemize}	
+\end{frame}
+
+
+\begin{frame}{Mechanism - \textit{different forces}}
+
+	\alert{\textbf{Several effects at play:}}
+	\vspace{0.2cm}
+	\begin{enumerate}
+		\item \alert{\textit{monopsony effect}}: firms post lower wages because they know non-EEA workers have a lower outside option.
+		\vspace{0.1cm}
+		\item \alert{\textit{discrimination effect}}: firms offer lower wages to non-EEA workers because they're discriminating $\rightarrow$ many nuanced mechanisms \textcolor{violet}{(Glover et. al, 2022)}.
+		\vspace{0.1cm}
+		\item \alert{\textit{shortage effect}}: firms post higher wages to attract workers in shortage occupations.
+		\vspace{0.1cm}
+		
+	\end{enumerate}
+
+	\vspace{0.4cm}
+	\alert{\textbf{Our goal:}}
+	\begin{itemize}
+		\item Elicit something akin to the \alert{\textit{monopsony effect}} while dis-entangling the rest. 
+	\end{itemize}
+ \end{frame}
+
+
+
+\begin{frame}{Empirics - \textit{motivation}}
+    \begin{itemize}
+	\item Rich empirical research suggests our mechanism could make sense. 
+	\vspace{0.3cm} 
+	
+	\begin{itemize}
+	\item \textcolor{violet}{\textbf{Signorelli (2024)}} France 2008 shortage list reform. Increase in hiring of non-EU workers. Wages fell in shortage occupations more for natives than for migrants. 
+	\vspace{0.2cm}
+	\item \textcolor{violet}{\textbf{Amior \& Stuhler (2023)}} Germany after Iron Curtain. Immigration strengthened firms' monopsony power at the bottom of pay distribution. Large decline in wages.
+	\vspace{0.2cm}
+	\item \textcolor{violet}{\textbf{Naidu, Nyarko \& Wang (2016)}} United Arab Emirates. Firms paid workers less than their marginal product. Reform untied workers from employers, wages rose.
+	\end{itemize}
+
+	\vspace{0.3cm}
+	\item \alert{Our contribution:} use more recent data than Signorelli (2024), try to explicitely isolate the \alert{\textit{monopsony effect}} from taste-based discrimination. 
+\end{itemize}
+\end{frame}
+
+\section*{Empirics}
+
+\begin{frame}{Empirics - \textit{data}}
+
+\alert{\textbf{ForCE}}   
+   \begin{enumerate}
+    \item FH table $\rightarrow$ job-seeker records from \textit{France Travail}.
+        \begin{itemize}
+            \item socio-demographics.
+            \item reservation wage.
+        \end{itemize}
+    \item MMO table $\rightarrow$ private sector work contracts from \textit{Déclaration Sociale Nominative}.
+    \begin{itemize}
+            \item wage.
+            \item occupation code.
+        \end{itemize}
+   \end{enumerate}
+
+\vspace{0.2cm}
+
+\alert{\textbf{Shortage Lists}} 
+ \begin{enumerate}
+    \item Digitalized \textit{arrêtés} with FAP and ROME. 
+   \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Empirics - \textit{strategy}}
+
+\alert{\textbf{We need to:}}
+\begin{enumerate}
+	\item Retrieve the causal effect on wages of being non-EEA in a listed occupation. 
+	\item Make sure we're not capturing capturing taste-based discrimination. 
+\end{enumerate}
+\vspace{0.4cm}
+\alert{\textbf{We plan on doing this by:}}
+\begin{enumerate}
+	\item A nice DiD specification.
+	\item Using only certain ethnic groups.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Empirics - \textit{strategy}}
+\label{DiD}
+
+\alert{\textbf{Baseline DiD}}
+\begin{align*}
+\ln(w_{ijrt}) &= \beta_0 + \beta_1 \text{NonEEA}_{i} + \beta_2 \text{EEA}_{i} + \beta_3 \text{Listed}_{jrt} 
++ \beta_4 (\text{NonEEA}_{i} \times \text{Listed}_{jrt}) \\ &+ \beta_5 (\text{EEA}_{i} \times \text{Listed}_{jrt} 
++ \mathbf{X}_{ijrt}'\boldsymbol{\gamma} + \text{fixed effects (tbd)}+ \varepsilon_{ijrt}
+\end{align*}
+
+\begin{itemize}
+	\item \alert{explained var}: $w_{i,j,r,t}$, wage of worker $i$ in occupation $j$, region $r$, at time $t$.
+	\item \alert{fixed effects}: either \textit{occupation $\times$ region $\times$ year} (but then no $\beta_3$), or a combination.
+	\item \alert{controls}: age, gender, experience, tenure, full-time. 
+\end{itemize}
+\vspace{0.3cm}
+
+\alert{\textbf{Key parameters}}
+\vspace{0.1cm}
+\begin{itemize}
+	\item omitted group: natives in unlisted occupations.
+	\item \alert{monopsony} $\rightarrow$ $\beta_4 - \beta_5$, differential listing effect on wages for non-EEA vs. EEA (compared to natives).
+\end{itemize}
+\hyperlink{ethnic}{\beamerbutton{comparing NATION groups}}
+\end{frame}
+
+
+
+\begin{frame}{Empirics - \textit{assumptions and limitations}}
+    \begin{itemize}
+
+    \item \alert{\textbf{Parallel trends}} \\
+		In the absence of listing, wage trends for non-EEA workers in eventually-listed occupations would have been parallel to natives/EEA. \\
+		$\Rightarrow$ \textit{bias could go both ways, depending on pre-trends.}
+		\vspace{0.1cm}
+	
+	\item \alert{\textbf{Spillovers}} \\
+		Listing in one occupation does not affect wages in other unlisted occupations. \\
+		$\Rightarrow$ \textit{bias could go both ways, depending on spillover sign.}
+		\vspace{0.1cm}
+
+	\item \alert{\textbf{Composition}} \\
+		This policy does not change the type of non-EEA workers entering the occupations. \\
+		$\Rightarrow$ \textit{assuming positive selection, bias downwards.}
+		\vspace{0.1cm}
+
+	\item \alert{\textbf{Shock exogeneity}} \\
+		Listing is exogenous.  \\
+		$\Rightarrow$ \textit{it is not, might conflate shortage premium with monopsony markdown. DiD solves this, if no heterogeneity in shortage premia.}
+		\vspace{0.1cm}
+    \end{itemize}
+
+\end{frame}
+
+\section*{Conclusions}
+\begin{frame}{Conclusions - \textit{our concerns}}
+
+\alert{\textbf{Time}}
+\begin{enumerate}
+	\item Not managing to clean/wrangle the data appropriately !
+\end{enumerate}
+\vspace{0.2cm}
+
+\alert{\textbf{Design}}
+\begin{enumerate}
+	\item Do we need to "purge" the wages from time and location effects ?
+	\item Do we have an appropriate design given the variation ? Listed occupations change over time and over region, but not many of them.
+\end{enumerate}
+\vspace{0.2cm}
+
+
+\alert{\textbf{Econometrics}}
+\begin{enumerate}
+	\item Enough statistical power with the reduced samples ?
+	\item If we choose a mix of FE, what variation do we end up using ? 
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+		\thispagestyle{empty}
+		\begin{center}
+			\textit{}\\
+			{ \huge
+				\vspace{1.3cm}
+				\alert{Thank you for listening!}}\\
+			\vspace{0.6cm} {\large \alert{Any questions or feedback ?}} \\
+			\vspace{1.3cm}
+			\textbf{} \\
+			\vspace{0.8cm}
+		\end{center}
+	\end{frame}
+
+
+\section*{Appendix}
+\begin{frame}{Appendix - \textit{focusing on monopsony}}
+\label{ethnic}
+
+\begin{itemize}
+    \item How to separate the monopsony channel from taste-based discrimination ?
+    \item If possible, compare groups similar on ethnic, cultural, religious lines.
+\end{itemize}
+\vspace{0.4cm}
+
+{\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lll}
+\toprule
+\textbf{Non-EEA (Count)} & \textbf{EEA (Count)} & \textbf{Bias?} \\
+\midrule
+Yugoslavs (34,000) & Croats + Slovenes (3,873) & Partial \\
+Yugoslavs (34,000) & Bulgarians + Romanians (164,859) & Partial \\
+Turks (111,043) & RO + BG + GR + CY (171,348) & Religious \\
+Other Europeans (133,339) & Baltics + Central EU (61,839) & None \\
+\bottomrule
+\end{tabular}
+}
+
+\vspace{0.3cm}
+{\small 
+\textbf{Note:} Groups in the final row are Slavic (except Estonia and Hungary) and Christian. Need to assume no discrimination against Orthodoxy.
+}  
+
+\hyperlink{DiD}{\beamerreturnbutton{Back}}
+\end{frame}
+
+\end{document}

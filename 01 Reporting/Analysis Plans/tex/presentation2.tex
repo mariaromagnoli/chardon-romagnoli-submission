@@ -1,0 +1,391 @@
+\documentclass[aspectratio=169,10pt,xcolor={dvipsnames}]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern, textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{appendix}
+\usepackage{babel}
+\usepackage{ragged2e}
+\usepackage{graphics}
+\usepackage{dsfont}
+\usepackage{subcaption}
+\usepackage{chngcntr}
+\usepackage{mathabx}
+\usepackage{soul}
+\usepackage{amsmath,amsthm}
+\usepackage{multirow}
+\usepackage{booktabs, threeparttable}
+\usepackage{tabularx,booktabs}
+\usepackage{ltablex,booktabs}
+\usepackage{bm}
+\counterwithin{subfigure}{figure}
+\usetheme{default}
+\usepackage{appendixnumberbeamer}
+\usefonttheme[onlymath]{serif}
+%\usecolortheme{spruce}
+
+%Colours
+\definecolor{shaded}{RGB}{153, 194, 173}
+\definecolor{violet}{RGB}{51, 51, 178}
+\definecolor{titlecolor}{RGB}{73, 156, 94}
+\definecolor{titlecolor2}{RGB}{10, 74, 38}
+\definecolor{alerted}{RGB}{51, 133, 92}
+\definecolor{alerted1}{RGB}{229, 240, 235}
+\definecolor{box}{RGB}{196, 224, 199}
+\setbeamercolor{alerted text}{fg=alerted}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{item}{fg=shaded}
+\setbeamercolor{block body alerted}{use=structure,fg=black,bg=alerted1}
+\setbeamercolor{block title alerted}{use=structure,fg=white,bg=titlecolor}
+\setbeamercolor{section in head/foot}{bg=white,fg=shaded}
+\setbeamercolor{frametitle}{fg=alerted,bg=white}
+\setbeamercolor{block body}{bg=structure!10}
+\setbeamercolor{block title}{bg=structure!20}
+\setbeamercolor{block body example}{bg=green!10}
+\setbeamercolor{block title example}{bg=green!20}
+
+%Fonts
+\setbeamerfont{subsection in toc}{size={\fontsize{7}{10}}}
+\setbeamerfont{author in sidebar}{size={\fontsize{5}{8}}}
+\setbeamerfont{section in sidebar}{size=\fontsize{5}{6}\selectfont}
+
+%Theme
+\setbeamertemplate{itemize item}{\scalebox{0.8}\textbullet}
+\setbeamertemplate{itemize subitem}{\scalebox{0.4}\textbullet}
+\setbeamertemplate{itemize items}[default]
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+\newenvironment{sitemize}{\begin{itemize}[label=$\to$]}{\end{itemize}}
+\setbeamersize
+{
+	text margin left=1.5cm,
+	text margin right=1.5cm
+}
+
+\begin{document}
+
+	\begin{frame}
+		\thispagestyle{empty}
+		\begin{center}
+			\textit{Applied Labor Economics}\\
+			{ \huge
+				\vspace{1.3cm}
+				\alert{Shortage Lists and Monopsony}}\\
+			\vspace{0.6cm} {\large \alert{Project Update}} \\
+			\vspace{1.3cm}
+			\textbf{Lisa Chardon--Denizot, Maria Romagnoli} \\
+			\vspace{0.8cm}
+		 	April 24th, 2026
+		\end{center}
+	\end{frame}
+
+\section*{Context}
+
+\begin{frame}{Context - \textit{quick recap}}
+
+\textbf{\alert{Question:}} \textit{what is the causal effect on wages of being a non-EEA worker in a listed occupation ?}
+
+\vspace{-0.3cm}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{determinants.png}
+\end{figure}
+
+\vspace{-0.3cm}
+
+\textbf{\alert{How to answer:}} DiD comparing natives, eea and non-eea, across listed and non-listed occupations, before and after the policy. For culturally matched samples. 
+
+\end{frame}
+
+
+\begin{frame}{Context - \textit{so far}}
+\label{sofar}
+\textbf{\alert{What we have done so far:}}	
+\vspace{0.1cm}
+\begin{enumerate}
+	\item A lot of data cleaning.
+	\item Some descriptives.
+	\item Some regressions (\textit{on the 2021 reform}). 
+	\item Some update on our thinking.
+	
+\end{enumerate}
+\vspace{0.5cm}
+\hyperlink{datacleaning}{\beamerbutton{1. data cleaning}}
+\hyperlink{descriptives}{\beamerbutton{2. descriptives}}
+\hyperlink{regressions}{\beamerbutton{3. regressions}}
+\hyperlink{thinking}{\beamerbutton{4. thinking}}
+\end{frame}
+
+\section*{Empirical Setting}
+
+\begin{frame}{Setting - \textit{evidence on métiers en tension}}
+\label{descriptives}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+
+	\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.1\textwidth]{heatmap.png}
+	\end{figure}
+
+\end{column}
+
+\begin{column}{0.5\textwidth}
+% the average at around 55 
+\begin{table}[h]
+\centering
+
+\begin{tabular}{l|ccc}
+\textit{region} & \textit{2021} & \textit{2024} & \textit{2025} \\
+\midrule
+\midrule
+Auvergne & 30 & 2 & 29\\
+PACA & 26 & 4 & 30 \\
+N. Aquitaine & 30 & 2 & 26 \\
+Bourgogne & 30 & 4 & 22 \\
+Centre & 30 & 3 & 20  \\
+Occitanie & 30 & 2 & 21 \\
+PdL & 30 & 4 & 18 \\
+HdF & 30 & 2 & 19  \\
+IdF & 30 & 4 & 17 \\
+Grand Est & 21 & 4 & 25 \\
+Normandie & 30 & 4 & 15 \\
+Bretagne & 30 & 3 & 13 \\
+Corse & 14 & 4 & 20 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\vspace{0.2cm}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Setting- \textit{balance checks}}
+\textcolor{violet}{\textbf{Takeaway}: Variability on observables (easy to control). Sample differences (less easy).}
+\vspace{0.3cm}
+
+\begin{table}
+  \centering
+  \small
+  \begin{tabular}{lcc|cccc}
+\toprule
+    & \multicolumn{2}{c}{\textit{Treatment Status}} 
+    & \multicolumn{3}{c}{\textit{Permit Status}} \\
+    \cmidrule(lr){2-3} \cmidrule(lr){4-6}
+    & \textit{Unlisted} & \textit{Listed} 
+    & \textit{French} & \textit{EEA} & \textit{Non-EEA} \\
+    \midrule
+	\midrule
+    Age (years)        & 31.63   & 33.19   & 32.60   & 36.54   & 38.45  \\
+    Monthly wage       & 1{,}588 & 1{,}771 & 1{,}720 & 1{,}653 & 1{,}560 \\
+    Tenure (months)    & 8.00    & 7.61    & 7.76    & 5.90    & 6.63   \\
+    Diploma (\%)       & 66      & 66      & 67      & 33      & 35     \\
+    Male (\%)          & 49      & 61      & 57    & 64      & 66     \\
+    Experience (years) & 3.91    & 4.49    & 4.30    & 4.08    & 5.59   \\
+	\midrule
+	Obs. (people) &  5,904,350  & 2,745,382    & 6,540,534   & 50,095  & 77,394   \\
+	Obs. (contracts) & 18,266,634   & 43,513,387    & 60,214,080   & 681,184   & 88,4757   \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\small \textit{NB: data 2019-2025.}
+\end{frame}
+
+
+\begin{frame}{Setting- \textit{evidence on wage gap}}
+	% for the future, this should be done with pre-data.
+	\textcolor{violet}{\textbf{Takeaway}: There is a wage gap, and the shortage effect is real. }
+	\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{boxplot_fullsample.png}
+\end{figure}
+\end{frame}
+
+\section*{Empirical Results}
+
+\begin{frame}{Results - \textit{pre-trends}}
+\textcolor{violet}{\textbf{Takeaway}: Pre-trends for the 2021 reform do not seem to hold. }
+\label{regressions}
+\begin{figure}
+	\centering
+    \includegraphics[width=\textwidth]{parallel1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Results - \textit{pre-trends}}
+\textcolor{violet}{\textbf{Takeaway}: Pre-trends for the 2021 reform do not seem to hold. }
+\label{regressions}
+\begin{figure}
+	\centering
+    \includegraphics[width=\textwidth]{parallel_trends.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Results - \textit{specification 1}}
+\alert{\textbf{Spec. 1: DDD}} \\
+\vspace{0.2cm}
+\textcolor{violet}{\textbf{Variation:}} comparing wage changes for different types of workers.  Across fap*region that became listed after April 2021 vs. those that did not.
+
+\begin{align*}
+\ln(w_{ijrt}) &= \alpha + \beta_1 \text{EEA}_{i} + \beta_2 \text{NonEEA}_{i} + \beta_3 \text{post}_{t} + \mathbf{X}_{ijrt}'\boldsymbol{\gamma} \\ &+ \beta_4 (\text{French}_{i} \times \text{treatment}_{jr} \times \text{post}_{t}) + \beta_5 (\text{EEA}_{i} \times \text{treatment}_{jr} \times \text{post}_{t}) \\ & + \beta_6 (\text{NonEEA}_{i} \times \text{treatment}_{jr} \times \text{post}_{t}) + \delta_{jr} + \delta_{t} + \varepsilon_{ijrt}
+\end{align*}
+\vspace{-0.2cm}
+\begin{itemize}
+    \item \alert{$\beta_1, \beta_2$}: baseline wage gap, unconditional on listing.
+    \item \alert{$\beta_3$}: common wage trend after April 2021.
+    \item \alert{$\beta_4$}: wage change for French workers in listed after Apr2021.
+    \item \alert{$\beta_5$}: differential wage change for EEA workers in listed after Apr2021 (\textit{should be 0}).
+    \item \alert{$\beta_6$}: differential wage change for non-EEA workers in listed cells after Apr2021 (\textit{should be negative}).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Results - \textit{specification 1}}
+\begin{table}[H]
+\centering
+\label{tab:model13}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lccc}
+\textit{(ref: french)} & \textit{estimate} & \textit{std. error} & \textit{$p$ value} \\
+\midrule
+\midrule
+EEA                                      & 0.0625  & 0.0119 & $<$0.001 *** \\
+Non-EEA                                  & -0.0464 & 0.0108 & $<$0.001 *** \\
+\hline
+Post                                     & 0.0330  & 0.0038 & $<$0.001 *** \\
+Male                                     & 0.1262  & 0.0153 & $<$0.001 *** \\
+Diploma                                  & 0.0379  & 0.0031 & $<$0.001 *** \\
+Experience (months)                      & 0.0008  & 0.0001 & $<$0.001 *** \\
+\hline
+French $\times$ treatment $\times$ post  & -0.0255 & 0.0082 & 0.002 ** \\
+EEA $\times$ treatment $\times$ post     & -0.0045 & 0.0220 & 0.837 \\
+Non-EEA $\times$ treatment $\times$ post & -0.0412 & 0.0208 & 0.048 * \\
+\bottomrule
+\multicolumn{4}{p{9cm}}{\footnotesize \textit{Notes:} 14,147,973 observations. Fixed effects: occupation $\times$ region (2,629), year (6). Standard errors clustered at occupation $\times$ region level.} \\
+\end{tabular}
+\end{table}
+\end{frame}
+
+\section*{Conclusions}
+\begin{frame}{Conclusions - \textit{what are we actually capturing ?}}
+	\label{thinking}
+	\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{determinants_updated.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Conclusions - \textit{what are we actually capturing ?}}
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.6}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{p{3cm} p{5.5cm} p{2cm} p{5cm}}
+\textit{effect} & \textit{mechanism} & \textit{direction} & \textit{consequence} \\
+\midrule
+\midrule
+
+Monopsony & 
+permit collapses non-EEA outside option, EEA workers unaffected & 
+$\downarrow$ & 
+target parameter \\
+
+Competition & 
+more non-EEA workers enter listed occupations post-listing, EEA inflow unaffected & 
+$\downarrow$ & 
+confounded  \\
+
+Hiring cost & 
+labour market test waived only for non-EEA workers, employer may capture surplus & 
+ambiguous & 
+confounded \\
+
+Composition & 
+listing attracts a different type of non-EEA worker post-treatment & 
+$\downarrow$ & 
+confounded  \\
+
+Shortage  & 
+labour scarcity raises wages for all workers  & 
+$\uparrow$ & 
+differenced out. \\
+
+Discrimination & 
+taste-based penalties depress non-EEA wages & 
+$\downarrow$ & 
+if time-invariant differenced out. if time-varying, managed by samples.\\
+
+\bottomrule
+\end{tabular}}
+\end{table}
+\end{frame}
+
+\begin{frame}{Conclusions - \textit{what's next}}
+
+\alert{\textbf{Recent data}}
+\begin{itemize}
+	\item Use 2025S2 data to study May 2025 effects, \textcolor{violet}{\textit{anybody managed to open it in SAS?}}
+\end{itemize}
+\vspace{0.2cm}
+
+\alert{\textbf{Identification}}
+\begin{itemize}
+	\item Staggered DiD + other simpler regressions and event studies.
+	\item Incorporate better \textit{niveau de formation} measures.
+\end{itemize}
+\vspace{0.2cm}
+\alert{\textbf{Robustness}}
+\begin{itemize}
+	\item Did our sample composition change ? 
+	\item Where are our workers located in France ?
+	\item All of our sample was registered in France Travail. How does it affect the generality of our results ?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+		\thispagestyle{empty}
+		\begin{center}
+			\textit{}\\
+			{ \huge
+				\vspace{1.3cm}
+				\alert{Thank you for listening!}}\\
+			\vspace{0.6cm} {\large \alert{Any questions or feedback ?}} \\
+			\vspace{1.3cm}
+			\textbf{} \\
+			\vspace{0.8cm}
+		\end{center}
+	\end{frame}
+
+
+\section*{Appendix}
+
+\begin{frame}{Appendix - \textit{data cleaning procedure}}
+\label{datacleaning}
+
+\textbf{\alert{Ficher Historique}} $\rightarrow$ \textit{socio-demographic data}.
+\begin{itemize}
+	\item Filter: relevant nationalities, relevant period, relevant variables.
+	\item Create: eea/non-eea and sample dummies.
+	\item Harmonize: if socio-demographic change over time, take latest value.
+\end{itemize}
+\vspace{0.4cm}
+\textbf{\alert{Mouvements de Main d'Œuvre}} $\rightarrow$ \textit{wage data}.
+\begin{itemize}
+	\item Filter: relevant people, contracts after 2019, longer than 30 days.
+	\item Create: period dummies, extract the region of the contract from department codes.
+	\item Harmonize: wages. 
+\end{itemize}
+\vspace{0.2cm}
+\textbf{\alert{Shortage lists}} $\rightarrow$ \textit{treatment data}.
+\begin{itemize}
+	\item Scrape + clean shortage list.
+	\item Map FAP codes (in the policy) to PCS codes (in MMO).
+\end{itemize}
+\vspace{0.1cm}
+\textit{NB: ForCE 2025S1 data.}
+
+\hyperlink{sofar}{\beamerreturnbutton{back}}
+\end{frame}
+
+\end{document}

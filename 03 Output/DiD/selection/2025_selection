@@ -1,0 +1,36 @@
+
+\begin{table}[htbp]
+   \caption{2025 Selection}
+   \centering
+   \begin{tabular}{lccc}
+      \tabularnewline \midrule \midrule
+      Dependent Variable: & \multicolumn{3}{c}{formation}\\
+       & \multicolumn{3}{c}{French} \\ 
+       & \multicolumn{3}{c}{EEA} \\ 
+       & \multicolumn{3}{c}{NonEEA} \\ 
+      Model:                 & (1)                   & (2)      & (3)\\  
+      \midrule
+      \emph{Variables}\\
+      treated                & -0.0241               & 0.0209   & 0.0690\\   
+                             & (0.0233)              & (0.1461) & (0.0867)\\   
+      post                   & 0.0014                & -0.0256  & 0.0975\\   
+                             & (0.0152)              & (0.1265) & (0.0804)\\   
+      treated $\times$ post  & 0.0444$^{*}$          & 0.1697   & -0.0978\\   
+                             & (0.0262)              & (0.1816) & (0.1435)\\   
+      \midrule
+      \emph{Fixed-effects}\\
+      fap\_code              & Yes                   & Yes      & Yes\\  
+      region\_contract       & Yes                   & Yes      & Yes\\  
+      year                   & Yes                   & Yes      & Yes\\  
+      \midrule
+      \emph{Fit statistics}\\
+      Observations           & 590,448               & 6,492    & 9,692\\  
+      R$^2$                  & 0.12910               & 0.20812  & 0.13305\\  
+      Within R$^2$           & $3.14\times 10^{-5}$  & 0.00025  & 0.00018\\  
+      \midrule \midrule
+      \multicolumn{4}{l}{\emph{Clustered (fap\_code) standard-errors in parentheses}}\\
+      \multicolumn{4}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+   \end{tabular}
+\end{table}
+
+

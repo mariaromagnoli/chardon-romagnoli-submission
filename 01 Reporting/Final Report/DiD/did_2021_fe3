@@ -1,0 +1,48 @@
+
+\begin{table}[htbp]
+   \caption{2021 Policy Effects - fe3}
+   \centering
+   \begin{tabular}{lcccc}
+      \tabularnewline \midrule \midrule
+      Dependent Variable: & \multicolumn{4}{c}{log\_wage}\\
+       & \multicolumn{4}{c}{All} \\ 
+       & \multicolumn{4}{c}{French} \\ 
+       & \multicolumn{4}{c}{EEA} \\ 
+       & \multicolumn{4}{c}{NonEEA} \\ 
+      Model:                                        & (1)                     & (2)                      & (3)                   & (4)\\  
+      \midrule
+      \emph{Variables}\\
+      treatment\_2021\_1                            & 0.0131                  & 0.0133                   & 0.0466                & -0.0479$^{*}$\\   
+                                                    & (0.0135)                & (0.0136)                 & (0.0436)              & (0.0283)\\   
+      post\_apr2021                                 & 0.0185$^{*}$            & 0.0188$^{*}$             & 0.0348                & -0.0041\\   
+                                                    & (0.0111)                & (0.0112)                 & (0.0283)              & (0.0234)\\   
+      age                                           & 0.0024$^{***}$          & 0.0024$^{***}$           & -0.0003               & -0.0001\\   
+                                                    & (0.0004)                & (0.0004)                 & (0.0011)              & (0.0006)\\   
+      diploma                                       & 0.0254$^{***}$          & 0.0254$^{***}$           & 0.0282$^{*}$          & 0.0107\\   
+                                                    & (0.0032)                & (0.0031)                 & (0.0149)              & (0.0134)\\   
+      part\_time                                    & -0.7116$^{***}$         & -0.7103$^{***}$          & -0.6693$^{***}$       & -0.8334$^{***}$\\   
+                                                    & (0.0243)                & (0.0243)                 & (0.0397)              & (0.0516)\\   
+      formation                                     & -0.0083$^{**}$          & -0.0087$^{**}$           & -0.0018               & 0.0034$^{*}$\\   
+                                                    & (0.0039)                & (0.0040)                 & (0.0026)              & (0.0019)\\   
+      male                                          & 0.0482$^{**}$           & 0.0479$^{**}$            & 0.0673$^{***}$        & 0.0854$^{**}$\\   
+                                                    & (0.0228)                & (0.0229)                 & (0.0227)              & (0.0340)\\   
+      experience\_months                            & $8.91\times 10^{-5}$    & $9\times 10^{-5}$$^{*}$  & $8.88\times 10^{-5}$  & $9.77\times 10^{-5}$\\    
+                                                    & ($5.45\times 10^{-5}$)  & ($5.39\times 10^{-5}$)   & (0.0001)              & ($8.14\times 10^{-5}$)\\    
+      treatment\_2021\_1 $\times$ post\_apr2021     & -0.0305                 & -0.0306                  & -0.1273               & 0.0513\\   
+                                                    & (0.0195)                & (0.0186)                 & (0.0805)              & (0.0431)\\   
+      \midrule
+      \emph{Fixed-effects}\\
+      fap\_code-year                                & Yes                     & Yes                      & Yes                   & Yes\\  
+      region\_contract-year                         & Yes                     & Yes                      & Yes                   & Yes\\  
+      \midrule
+      \emph{Fit statistics}\\
+      Observations                                  & 2,284,890               & 2,241,143                & 16,173                & 27,574\\  
+      R$^2$                                         & 0.33601                 & 0.33576                  & 0.38940               & 0.41793\\  
+      Within R$^2$                                  & 0.14647                 & 0.14592                  & 0.13774               & 0.19225\\  
+      \midrule \midrule
+      \multicolumn{5}{l}{\emph{Clustered (fap\_code) standard-errors in parentheses}}\\
+      \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+   \end{tabular}
+\end{table}
+
+

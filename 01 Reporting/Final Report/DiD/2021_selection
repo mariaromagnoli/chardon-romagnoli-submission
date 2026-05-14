@@ -1,0 +1,36 @@
+
+\begin{table}[htbp]
+   \caption{2021 Selection}
+   \centering
+   \begin{tabular}{lccc}
+      \tabularnewline \midrule \midrule
+      Dependent Variable: & \multicolumn{3}{c}{formation}\\
+       & \multicolumn{3}{c}{French} \\ 
+       & \multicolumn{3}{c}{EEA} \\ 
+       & \multicolumn{3}{c}{NonEEA} \\ 
+      Model:                 & (1)                   & (2)      & (3)\\  
+      \midrule
+      \emph{Variables}\\
+      treated                & 0.0449$^{**}$         & 0.1665   & -0.2411$^{*}$\\   
+                             & (0.0207)              & (0.1617) & (0.1294)\\   
+      post                   & 0.0049                & -0.0352  & 0.0895$^{*}$\\   
+                             & (0.0253)              & (0.0863) & (0.0505)\\   
+      treated $\times$ post  & -0.0137               & -0.0369  & 0.1166\\   
+                             & (0.0170)              & (0.1012) & (0.0810)\\   
+      \midrule
+      \emph{Fixed-effects}\\
+      fap\_code              & Yes                   & Yes      & Yes\\  
+      region\_contract       & Yes                   & Yes      & Yes\\  
+      year                   & Yes                   & Yes      & Yes\\  
+      \midrule
+      \emph{Fit statistics}\\
+      Observations           & 2,439,871             & 17,004   & 28,835\\  
+      R$^2$                  & 0.16650               & 0.23880  & 0.15110\\  
+      Within R$^2$           & $2.46\times 10^{-5}$  & 0.00032  & 0.00045\\  
+      \midrule \midrule
+      \multicolumn{4}{l}{\emph{Clustered (fap\_code) standard-errors in parentheses}}\\
+      \multicolumn{4}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+   \end{tabular}
+\end{table}
+
+

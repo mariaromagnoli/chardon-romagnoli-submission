@@ -1,0 +1,45 @@
+
+\begin{table}[htbp]
+   \caption{2025 Policy Effects - fe2}
+   \centering
+   \begin{tabular}{lcccc}
+      \tabularnewline \midrule \midrule
+      Dependent Variable: & \multicolumn{4}{c}{log\_wage}\\
+       & \multicolumn{4}{c}{All} \\ 
+       & \multicolumn{4}{c}{French} \\ 
+       & \multicolumn{4}{c}{EEA} \\ 
+       & \multicolumn{4}{c}{NonEEA} \\ 
+      Model:                                        & (1)                     & (2)                     & (3)             & (4)\\  
+      \midrule
+      \emph{Variables}\\
+      post\_may2025                                 & 0.0061                  & 0.0060                  & -0.0065         & 0.0305\\   
+                                                    & (0.0102)                & (0.0102)                & (0.0188)        & (0.0209)\\   
+      age                                           & -0.0006                 & -0.0006                 & -0.0014         & -0.0009\\   
+                                                    & (0.0004)                & (0.0004)                & (0.0010)        & (0.0007)\\   
+      diploma                                       & 0.0037                  & 0.0044                  & -0.0160         & 0.0182\\   
+                                                    & (0.0032)                & (0.0031)                & (0.0201)        & (0.0125)\\   
+      part\_time                                    & -0.8015$^{***}$         & -0.8016$^{***}$         & -0.6872$^{***}$ & -0.9042$^{***}$\\   
+                                                    & (0.0333)                & (0.0331)                & (0.0690)        & (0.0570)\\   
+      formation                                     & 0.0040                  & 0.0044                  & 0.0055          & 0.0018\\   
+                                                    & (0.0029)                & (0.0028)                & (0.0046)        & (0.0029)\\   
+      male                                          & 0.0645$^{**}$           & 0.0649$^{**}$           & 0.0293          & 0.0787$^{**}$\\   
+                                                    & (0.0271)                & (0.0276)                & (0.0298)        & (0.0336)\\   
+      experience\_months                            & 0.0002$^{***}$          & 0.0002$^{***}$          & 0.0004$^{**}$   & 0.0003$^{***}$\\   
+                                                    & ($4.69\times 10^{-5}$)  & ($4.63\times 10^{-5}$)  & (0.0002)        & ($9.4\times 10^{-5}$)\\    
+      treatment\_2025\_1 $\times$ post\_may2025     & -0.0061                 & -0.0068                 & 0.0216          & -0.0010\\   
+                                                    & (0.0144)                & (0.0150)                & (0.0281)        & (0.0205)\\   
+      \midrule
+      \emph{Fixed-effects}\\
+      fap\_code-region\_contract-year               & Yes                     & Yes                     & Yes             & Yes\\  
+      \midrule
+      \emph{Fit statistics}\\
+      Observations                                  & 583,337                 & 567,507                 & 6,332           & 9,498\\  
+      R$^2$                                         & 0.38933                 & 0.38965                 & 0.43194         & 0.53714\\  
+      Within R$^2$                                  & 0.20899                 & 0.20897                 & 0.12921         & 0.26135\\  
+      \midrule \midrule
+      \multicolumn{5}{l}{\emph{Clustered (fap\_code) standard-errors in parentheses}}\\
+      \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+   \end{tabular}
+\end{table}
+
+

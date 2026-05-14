@@ -1,0 +1,219 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{setspace}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{natbib}
+\usepackage{xcolor}
+
+\definecolor{MyPurple}{rgb}{0.2,0.1,0.6}
+\definecolor{MyBlue}{rgb}{0,0.2,0.6}
+\definecolor{MyGreen}{rgb}{0,0.4,0}
+
+\usepackage[colorlinks=true, linkcolor=black, citecolor=MyPurple, urlcolor=MyBlue, filecolor=MyBlue]{hyperref}
+
+\singlespacing
+\setlength{\parskip}{4pt}
+
+\titlespacing*{\section}{0pt}{6pt}{2pt}
+\titleformat{\section}{\normalsize\bfseries}{}{0em}{}
+
+\title{\textbf{Shortage Lists and Monopsony}\\[0.2em]
+\large \textit{Applied Labor Economics - Proposal}}
+\author{Lisa Chardon--Denizot \and Maria Romagnoli}
+\date{April 10th, 2026}
+
+\begin{document}
+
+\maketitle
+\vspace{-0.5em}
+
+\section{I. Setting}
+\vspace{0.2cm}
+
+\textit{\textbf{a. context}}
+
+France maintains regional lists of shortage occupations (\textit{m\'etiers en tension}), in which employers may hire non-EEA\footnote{European Economic Area. Commercial agreement extending the EU common market to Iceland, Norway, and Liechtenstein.} nationals without a burdensome labor market test\footnote{A regulatory requirement. Employers must demonstrate they cannot find suitable domestic workers before they are allowed to hire foreign workers.} \citep{France2025}. This policy was first introduced in 2008, and was revised in 2021, 2024\footnote{Minor change, concerning the agricultural world.} and 2025.
+
+Under the most recent iteration of the law, non-EEA workers employed in a listed occupation may apply for residency permit extensions or regularization \citep{France2024,ServicePublic2025}. Legal status becomes contigent upon a sector, binding workers to their current role unless they are willing to face significant risk and administrative costs.
+
+\textbf{\textit{b. research question}}
+
+We presume that firms are aware of non-EEA's workers incentives to be employed in a listed occupation. We posit that firms might exploit this vulnerability to set wages below marginal productivity for this group - we call this the \textit{monopsony effect}. The question we aim to answer is: \textit{are firms undercutting non-EEA individuals in listed occupations, because of the legal advantages involved for these workers?} In other words, does a \textit{monopsony effect} exist ?
+
+Answering this question entails isolating the \textit{monopsony effect} from the other forces that operate in these labor markets. First, taste-based discrimination might depress wages independently of firm barganing power (\textit{discrimination effect}). Second, labor scarcity in these occupations may push firms to offer wage premiums to attract workers (\textit{shortage premium effect}). 
+
+\textbf{\textit{c. related work}}
+
+The paper we are most closely related to is \citet{signorelli2024}, which analysed the first iteration of the French shortage lists policy. She looks at the outcomes of the policy-induced increase in migrant labor on native outcomes. She finds that wages for migrant workers fell by more than for natives. We believe this last differential is consistent with our hypothesis. 
+
+We also build on \citet{naidu2016}, which shows that under the UAE's \textit{kafala} system\footnote{A labor sponsorship mechanism that binds migrant workers' legal status and employment rights to a specific employer. It prevents them from changing jobs or leaving the country without their sponsor's consent.}, workers were paid only 51\% of their estimated marginal product. A 2011 reform relaxing mobility restrictions raised this share to 72\%.  Work on German administrative data \citep{amior2024} shows that immigration strengthens firm monopsony power at the bottom of the pay distribution. These papers validate our core intuition, \textit{i.e.} that wage markdowns can be driven by a collapse of workers' outside options, and that this collapse can be institutionally driven. 
+
+ De facto, we will extend \citet{signorelli2024}'s analysis using more recent data (2019-2025). We differ in our conceptual framework, as we try to bring in elements from the migration-monopsony literature into this policy evaluation. Furthermore, we are alone in explicitely disentangling taste-based discrimination from monopsony effects. To do so is essential. Indeed, work such as \citet{glover2017} shows how bias toward minority workers generates observable wage penalties independently from productivity or bargaining power. \\
+ 
+\section{II. Analysis}
+\vspace{0.2cm}
+
+\textbf{\textit{a. conceptual framework}}
+
+Wages result from Nash bargaining, and are a function of the firm's bargaining power. As the firm's power increases, the negotiated wage converges toward the worker's outside option. Given that natives and EEA citizens can freely switch employers or occupations, their outside option approximates the competitive market wage. On the other hand, non-EEA citizens in listed occupations work under permits that are forfeited upon leaving their job, thus their outside option is undocumented work\footnote{or the cost of leaving the country, or the risk-weighted administrative cost of getting a new permit.}. This framework predicts a wage differential between EEA/natives and non-EEA. It is testable. \\
+
+\textbf{\textit{b. empirical strategy}}
+
+We wish to retrieve the causal effect on wages of being a non-EEA national 
+in a listed occupation, net of taste-based discrimination and shortage premium effects. To do so, we plan to run a triple-differences regression on a culturally-matched sample. Indeed, the analysis should be limited to non-EEA and EEA nationalities that differ primarily on permit contraints, not on culture or religion\footnote{Please consult the Appendix for the exact details.}. This enables us to attribute the estimates to monopsony rather than discrimination.  
+
+
+The regression will exploit variation in listing status across occupations, regions, and time, comparing wage changes for non-EEA workers relative to natives around listing events. Formally:
+
+\begin{align*}
+    \ln(w_{ijrt}) &= \beta_0 + \beta_1 \text{NonEEA}_i + \beta_2 \text{EEA}_i 
+    + \beta_3 \text{Listed}_{jrt} 
+    + \beta_4 (\text{NonEEA}_i \times \text{Listed}_{jrt}) \\
+    &+ \beta_5 (\text{EEA}_i \times \text{Listed}_{jrt}) 
+    + \mathbf{X}'_{ijrt} \gamma + \delta_{jrt} + \varepsilon_{ijrt}
+    \label{eq:baseline}
+\end{align*}
+
+where $w_{ijrt}$ is the wage of worker $i$ in occupation $j$, region $r$, 
+at time $t$. $\text{NonEEA}_i$ and $\text{EEA}_i$ are indicator variables 
+for nationality group, with natives as the omitted category. 
+$\text{Listed}_{jrt}$ indicates whether the occupation is on the list. $\mathbf{X}_{ijrt}$ is a vector of individual controls including age, gender, experience, tenure, and full-time status. $\delta_{jrt}$ denotes fixed effects, which will be different across specifications\footnote{occupation × region × year is the best way to absorb the \textit{shortage premium effect}. It is however collinear with the Listed indicator, thus the analysis should be repeated with other FE sets.}.
+
+The coefficient of interest is $\beta_4 - \beta_5$: the differential 
+effect of listing on wages for non-EEA workers relative to EEA workers 
+(both compared to natives). Under our monopsony hypothesis, we expect 
+$\beta_4 - \beta_5 < 0$. 
+
+Identification rests on four key assumptions. First, absent listing, wage trends for non-EEA workers in eventually-listed occupations would track those of natives and EEA workers. Second, listing effects are occupation-specific and do not spillover to unlisted occupations. Third, the policy does not alter the composition of non-EEA workers entering listed occupations, so under positive selection, any remaining bias moves downward. Fourth, listing is exogenous. These assumptions should be tested, where possible.
+
+\textbf{\textit{\textit{c. data}}}
+
+We will focus on the 2021 reform\footnote{We will try to study the 2025 one as well, but the most recent ForCE vintage is S12025.} and on the minor 2024 reform. The samples will cover 2019-2025, comprise all French regions, and all occupations. 
+
+The primary data source is ForCE (\textit{Formation, Ch\^omage et Emploi}). We plan on using the last or the second-to-last vintage, depending on quality. Worker origin and socio-demographic characteristics are drawn from the \textit{Fichier Historique} table, where the statistical unit is the unemployment spell, while wages and job characteristics are drawn from the \textit{Mouvement de Main-d'\OE uvre} table, where the statistical unit is the contract. For detailed variable information, please consult the Appendix.
+
+Workers may hold multiple contracts over the period, thus the final dataset will be structured at the contract level. Worker characteristics will be merged from FH using the ForCE key. This implies that workers with multiple contracts will appear several times - another specification, weighted by worker, might be used to account for this. 
+
+\clearpage
+\bibliographystyle{aer}
+\begin{thebibliography}{9}
+\vspace{0.2cm}
+
+\bibitem[Amior and Stuhler(2024)]{amior2024}
+Amior, M., and J. Stuhler (2024).
+\newblock Immigration, Monopsony and the Distribution of Firm Pay.
+\newblock \textit{CEP Discussion Paper} No. DP1971. Centre for Economic Performance, LSE.
+
+\bibitem[Glover, Pallais, and Pariente(2017)]{glover2017}
+Glover, D., A. Pallais, and W. Pariente (2017).
+\newblock Discrimination as a Self-Fulfilling Prophecy: Evidence from French Grocery Stores.
+\newblock \textit{Quarterly Journal of Economics}, 132(3): 1219--1260.
+
+\bibitem[Naidu, Nyarko, and Wang(2016)]{naidu2016}
+Naidu, S., Y. Nyarko, and S.-Y. Wang (2016).
+\newblock Monopsony Power in Migrant Labor Markets: Evidence from the United Arab Emirates.
+\newblock \textit{Journal of Political Economy}, 124(6): 1735--1792.
+
+\bibitem[Signorelli(2024)]{signorelli2024}
+Signorelli, S. (2024).
+\newblock Do Skilled Migrants Compete with Native Workers? Analysis of a Selective Immigration Policy.
+\newblock \textit{Journal of Human Resources}, 59(3).
+
+\bibitem[Parlement Français(2024)]{France2024}
+\textit{Parlement Français} (2024).
+\newblock LOI n° 2024-42 du 26 janvier 2024 pour contrôler l'immigration, améliorer l'intégration.
+\newblock \textit{Journal Officiel de la République Française}, 0022.
+
+\bibitem[Parlement Français(2025)]{France2025}
+\textit{Parlement Français} (2025).
+\newblock Arrêté du 21 mai 2025 fixant la liste des métiers et zones géographiques caractérisés par des difficultés de recrutement en application de l'article L. 414-13 du code de l'entrée et du séjour des étrangers et du droit d'asile.
+\newblock \textit{Journal Officiel de la République Française}, 0119.
+
+\bibitem[Service Public(2025)]{ServicePublic2025}
+\textit{Direction de l'information légale et administrative (Premier ministre)} (2025).
+\newblock Qu'est-ce que la régularisation d'un étranger par le travail ?
+\newblock Direction de l'information légale et administrative (DILA), Premier ministre.
+\newblock Retrieved from \url{https://www.service-public.gouv.fr/particuliers/vosdroits/F16053}
+\end{thebibliography}
+
+\clearpage
+\section*{Appendix}
+
+\textbf{\textit{a. culturally matched samples}}
+
+\begin{table}[h!]
+\centering
+\caption{\textit{Fichier Historique} NATION codes and matched groupings, with bias assessment.}
+\begin{tabular}{ll|ll|l}
+\toprule
+\multicolumn{2}{c|}{\textbf{Non-EEA}} & \multicolumn{2}{c|}{\textbf{EEA}} & \textbf{bias?} \\
+\textit{code} & \textit{comments} & \textit{code} & \textit{comments} & \\
+\midrule
+24 & YUG (34,000) & 27 + 96 & HRV + SVN (3,873) & Partial \\
+24 & YUG (34,000) & 97 + 98 & BGR + ROU (164,859) & Partial \\
+26 & TUR (111,043) & 19 + 97 + 98 + 2 & GRC + BGR + ROU + CYP (171,348) & Religious \\
+29 & Autres européens (133,339) & 91 to 95 & Baltics + Central EU (61,839) & None \\
+\bottomrule
+\end{tabular}
+\label{tab:nation_codes}
+\end{table}
+\small NB: \textit{YUG} comprises of non-EU former Yugoslavia (Montenegro, Serbia, Bosnia and Herzegovina, Kosovo, North Macedonia). With the exception of Kosovo, these countries have virtually the same ethno-linguistic background. Some bias might be introduced because some Kosovar Albanians and Bosniaks may practice Islam. \textit{YUG} is also comparable with Balkan Orthodox countries formerly under Ottoman rule, \textit{ROU} and \textit{BGR}. \\
+
+
+\textbf{\textit{b. variables to extract}}
+\\
+\section*{Ficher Historique}
+
+\begin{longtable}{p{4cm}|p{8.5cm}}
+\toprule
+\textit{variable} & \textit{description} \\
+\midrule
+force\_id & Unique identifier. \\
+SEXE & Sex of the job seeker.\\
+REGION & Region code of residence.\\
+NATION & Nationality code.\\
+DATNAIS & Date of birth. \\
+TEMPS & Work time for the job sought. \\
+CONTRAT & Type of contract sought by the job seeker. \\
+ROME & ROME code for the job sought. \\
+EXPER & Experience in the sought ROME. \\
+EXPEUNIT & Unit of experience duration.\\
+DIPLOME & Diploma obtained by the job seeker at registration.\\
+QUALIF & Job seeker's qualification level. \\
+NIVFOR & Education level attained by the job seeker. \\
+NDEM & Demand number (numbered from most recent to oldest). \\
+DATINS & Demand opening date. \\
+DATANN & Demand cancellation date. \\
+\bottomrule
+\end{longtable}
+
+\section*{Mouvement de Main d'Oeuvre}
+
+\begin{longtable}{p{4cm}|p{8.5cm}}
+\toprule
+\textit{variable} & \textit{description} \\
+\midrule
+force\_id & Unique identifier.  \\
+DebutCTT & Contract start date. \\
+FinCTT & Contract end date. \\
+H\_Etab\_SQN & Establishment identifier.\\
+L\_contrat\_sqn & Contract identifier. \\
+ModeExercice & Employment time status.\\
+salaire\_base & Base salary.\\
+salaire\_base\_mois\_complet & Base salary for a full month of work. \\
+\bottomrule
+\end{longtable}
+
+
+
+
+\end{document}
+
+
+
