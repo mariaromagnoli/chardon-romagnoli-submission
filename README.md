@@ -1,6 +1,6 @@
 # Shortage Lists and Monopsony
 
-Replication repository for the _Applied Labor Economics_ final project at ENSAE Paris (2025–2026).
+Replication repository for the _Applied Labor Economics_ final project.
 
 **Authors:** Lisa Chardon--Denizot and Maria Romagnoli
 
