@@ -20,6 +20,7 @@ The analysis uses the ForCE 2025S2 vintage, accessed via CASD. Two datasets are 
 - **MMO** (*Mouvements de Main d'Œuvre*): contract-level employment spells from the Labour Ministry, with monthly wages, region, and PCS-ESE occupation codes.
 
 The shortage lists (2008, 2021, 2024, 2025) are parsed from the official *arrêtés* (PDFs in `02 Code/01 Extraction/00 Raw/`). Occupation matching relies on DARES FAP–PCS correspondence table.
+
 ---
 
 ## Repository structure
