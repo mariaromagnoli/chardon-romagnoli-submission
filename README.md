@@ -32,10 +32,7 @@ The shortage lists (2008, 2021, 2024, 2025) are parsed from the official *arrêt
 │
 ├── Analysis Plans/        Presentations and research proposal
 ├── Literature Review/     Key papers
-└── Final Report/
-    ├── Final.tex          Main paper 
-    ├── biblio.bib         Bibliography
-    └── Final.pdf          Compiled paper
+└── Final Report/ Final report
 
 02 Code/
 │
