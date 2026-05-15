@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.26)  14 MAY 2026 23:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.26)  15 MAY 2026 10:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -497,7 +497,7 @@ Package microtype Info: Loading generic protrusion settings for font family
  [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (5.18623pt too wide) in paragraph at lines 143--163
+Overfull \hbox (5.18623pt too wide) in paragraph at lines 141--161
  [][] 
  []
 
@@ -505,40 +505,49 @@ Overfull \hbox (5.18623pt too wide) in paragraph at lines 143--163
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (12.73997pt too wide) in paragraph at lines 179--180
-\OT1/cmr/m/n/10 (-20) We es-ti-mate sep-a-rate difference-in-differences re-gres-sions[][][][][] for each na-tion-al-ity group $\OML/cmm/m/it/10 g \OMS/cmsy/m/n/10 2 f[]g$\OT1/cmr/m/n/10 (-20) .
+Overfull \hbox (8.25385pt too wide) in paragraph at lines 177--178
+\OT1/cmr/m/n/10 (-20) We es-ti-mate sep-a-rate difference-in-differences re-gres-sions for each na-tion-al-ity group $\OML/cmm/m/it/10 g \OMS/cmsy/m/n/10 2 f[]g$\OT1/cmr/m/n/10 (-20) .
  []
 
-[3] [4]
-<../../03 Output/DiD/event_study_2021.png, id=128, 520.344pt x 372.1905pt>
+[3]
+
+Package natbib Warning: Citation `GoodmanBacon2021' on page 4 undefined on input line 207.
+
+
+Overfull \hbox (22.31023pt too wide) in paragraph at lines 236--237
+\OT1/cmr/m/n/10 (-20) If em-ployer bar-gain-ing power over non-EEA work-ers in-creases in listed sec-tors, we would ex-pect \OT1/cmtt/m/n/10 Treat$ \OMS/cmsy/m/n/10 ^^B $\OT1/cmtt/m/n/10 Post$[] \OML/cmm/m/it/10 <$
+ []
+
+[4]
+<../../03 Output/DiD/event_study_2021.png, id=158, 520.344pt x 372.1905pt>
 File: ../../03 Output/DiD/event_study_2021.png Graphic file (type png)
 <use ../../03 Output/DiD/event_study_2021.png>
-Package pdftex.def Info: ../../03 Output/DiD/event_study_2021.png  used on input line 237.
+Package pdftex.def Info: ../../03 Output/DiD/event_study_2021.png  used on input line 254.
 (pdftex.def)             Requested size: 227.82901pt x 162.96356pt.
-<../../03 Output/DiD/event_study_french_2021.png, id=130, 520.344pt x 372.1905pt>
+<../../03 Output/DiD/event_study_french_2021.png, id=160, 520.344pt x 372.1905pt>
 File: ../../03 Output/DiD/event_study_french_2021.png Graphic file (type png)
 <use ../../03 Output/DiD/event_study_french_2021.png>
-Package pdftex.def Info: ../../03 Output/DiD/event_study_french_2021.png  used on input line 241.
+Package pdftex.def Info: ../../03 Output/DiD/event_study_french_2021.png  used on input line 258.
 (pdftex.def)             Requested size: 227.82901pt x 162.96356pt.
-<../../03 Output/DiD/event_study_eea_2021.png, id=131, 520.344pt x 372.1905pt>
+<../../03 Output/DiD/event_study_eea_2021.png, id=161, 520.344pt x 372.1905pt>
 File: ../../03 Output/DiD/event_study_eea_2021.png Graphic file (type png)
 <use ../../03 Output/DiD/event_study_eea_2021.png>
-Package pdftex.def Info: ../../03 Output/DiD/event_study_eea_2021.png  used on input line 246.
+Package pdftex.def Info: ../../03 Output/DiD/event_study_eea_2021.png  used on input line 263.
 (pdftex.def)             Requested size: 227.82901pt x 162.96356pt.
-<../../03 Output/DiD/event_study_non_eea_2021.png, id=132, 520.344pt x 372.1905pt>
+<../../03 Output/DiD/event_study_non_eea_2021.png, id=162, 520.344pt x 372.1905pt>
 File: ../../03 Output/DiD/event_study_non_eea_2021.png Graphic file (type png)
 <use ../../03 Output/DiD/event_study_non_eea_2021.png>
-Package pdftex.def Info: ../../03 Output/DiD/event_study_non_eea_2021.png  used on input line 250.
+Package pdftex.def Info: ../../03 Output/DiD/event_study_non_eea_2021.png  used on input line 267.
 (pdftex.def)             Requested size: 227.82901pt x 162.96356pt.
 
-Overfull \hbox (5.26932pt too wide) in paragraph at lines 260--286
+Overfull \hbox (5.26932pt too wide) in paragraph at lines 277--303
  [][] 
  []
 
 [5
 
  <../../03 Output/DiD/event_study_2021.png> <../../03 Output/DiD/event_study_french_2021.png> <../../03 Output/DiD/event_study_eea_2021.png> <../../03 Output/DiD/event_study_non_eea_2021.png>]
-Overfull \hbox (5.26932pt too wide) in paragraph at lines 293--319
+Overfull \hbox (5.26932pt too wide) in paragraph at lines 310--336
  [][] 
  []
 
@@ -549,19 +558,19 @@ Overfull \hbox (5.26932pt too wide) in paragraph at lines 293--319
 ] (./Final.bbl) [8
 
 ]
-Overfull \hbox (5.18623pt too wide) in paragraph at lines 413--433
+Overfull \hbox (5.18623pt too wide) in paragraph at lines 423--443
  [][] 
  []
 
-<../../03 Output/Descriptives/boxplot_fullsample.png, id=160, 505.89pt x 505.89pt>
+<../../03 Output/Descriptives/boxplot_fullsample.png, id=186, 505.89pt x 505.89pt>
 File: ../../03 Output/Descriptives/boxplot_fullsample.png Graphic file (type png)
 <use ../../03 Output/Descriptives/boxplot_fullsample.png>
-Package pdftex.def Info: ../../03 Output/Descriptives/boxplot_fullsample.png  used on input line 440.
+Package pdftex.def Info: ../../03 Output/Descriptives/boxplot_fullsample.png  used on input line 450.
 (pdftex.def)             Requested size: 237.324pt x 237.32832pt.
-<../../03 Output/Descriptives/sharecontracts.png, id=161, 589.0005pt x 372.1905pt>
+<../../03 Output/Descriptives/sharecontracts.png, id=187, 589.0005pt x 372.1905pt>
 File: ../../03 Output/Descriptives/sharecontracts.png Graphic file (type png)
 <use ../../03 Output/Descriptives/sharecontracts.png>
-Package pdftex.def Info: ../../03 Output/Descriptives/sharecontracts.png  used on input line 448.
+Package pdftex.def Info: ../../03 Output/Descriptives/sharecontracts.png  used on input line 458.
 (pdftex.def)             Requested size: 332.25215pt x 209.95863pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -569,62 +578,65 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [9
 
  <../../03 Output/Descriptives/boxplot_fullsample.png>]
-<../../03 Output/Descriptives/heatmap.png, id=168, 520.344pt x 372.1905pt>
+<../../03 Output/Descriptives/heatmap.png, id=194, 520.344pt x 372.1905pt>
 File: ../../03 Output/Descriptives/heatmap.png Graphic file (type png)
 <use ../../03 Output/Descriptives/heatmap.png>
-Package pdftex.def Info: ../../03 Output/Descriptives/heatmap.png  used on input line 483.
+Package pdftex.def Info: ../../03 Output/Descriptives/heatmap.png  used on input line 493.
 (pdftex.def)             Requested size: 284.7917pt x 203.71155pt.
  [10 <../../03 Output/Descriptives/sharecontracts.png> <../../03 Output/Descriptives/heatmap.png>]
-Overfull \hbox (5.26932pt too wide) in paragraph at lines 493--519
+Overfull \hbox (5.26932pt too wide) in paragraph at lines 503--529
  [][] 
  []
 
 
-Overfull \hbox (5.26932pt too wide) in paragraph at lines 525--549
+Overfull \hbox (5.26932pt too wide) in paragraph at lines 535--559
  [][] 
  []
 
 [11
 
 ]
-<../../03 Output/DiD/event_study_2025.png, id=182, 520.344pt x 372.1905pt>
+<../../03 Output/DiD/event_study_2025.png, id=206, 520.344pt x 372.1905pt>
 File: ../../03 Output/DiD/event_study_2025.png Graphic file (type png)
 <use ../../03 Output/DiD/event_study_2025.png>
-Package pdftex.def Info: ../../03 Output/DiD/event_study_2025.png  used on input line 557.
+Package pdftex.def Info: ../../03 Output/DiD/event_study_2025.png  used on input line 567.
 (pdftex.def)             Requested size: 227.82901pt x 162.96356pt.
-<../../03 Output/DiD/event_study_french_2025.png, id=183, 520.344pt x 372.1905pt>
+<../../03 Output/DiD/event_study_french_2025.png, id=207, 520.344pt x 372.1905pt>
 File: ../../03 Output/DiD/event_study_french_2025.png Graphic file (type png)
 <use ../../03 Output/DiD/event_study_french_2025.png>
-Package pdftex.def Info: ../../03 Output/DiD/event_study_french_2025.png  used on input line 561.
+Package pdftex.def Info: ../../03 Output/DiD/event_study_french_2025.png  used on input line 571.
 (pdftex.def)             Requested size: 227.82901pt x 162.96356pt.
-<../../03 Output/DiD/event_study_eea_2025.png, id=184, 520.344pt x 372.1905pt>
+<../../03 Output/DiD/event_study_eea_2025.png, id=208, 520.344pt x 372.1905pt>
 File: ../../03 Output/DiD/event_study_eea_2025.png Graphic file (type png)
 <use ../../03 Output/DiD/event_study_eea_2025.png>
-Package pdftex.def Info: ../../03 Output/DiD/event_study_eea_2025.png  used on input line 566.
+Package pdftex.def Info: ../../03 Output/DiD/event_study_eea_2025.png  used on input line 576.
 (pdftex.def)             Requested size: 227.82901pt x 162.96356pt.
-<../../03 Output/DiD/event_study_non_eea_2025.png, id=185, 520.344pt x 372.1905pt>
+<../../03 Output/DiD/event_study_non_eea_2025.png, id=209, 520.344pt x 372.1905pt>
 File: ../../03 Output/DiD/event_study_non_eea_2025.png Graphic file (type png)
 <use ../../03 Output/DiD/event_study_non_eea_2025.png>
-Package pdftex.def Info: ../../03 Output/DiD/event_study_non_eea_2025.png  used on input line 570.
+Package pdftex.def Info: ../../03 Output/DiD/event_study_non_eea_2025.png  used on input line 580.
 (pdftex.def)             Requested size: 227.82901pt x 162.96356pt.
 
-Overfull \hbox (5.26932pt too wide) in paragraph at lines 580--604
+Overfull \hbox (5.26932pt too wide) in paragraph at lines 590--614
  [][] 
  []
 
 [12
 
  <../../03 Output/DiD/event_study_2025.png> <../../03 Output/DiD/event_study_french_2025.png> <../../03 Output/DiD/event_study_eea_2025.png> <../../03 Output/DiD/event_study_non_eea_2025.png>]
-Overfull \hbox (36.31349pt too wide) in paragraph at lines 611--623
+Overfull \hbox (36.31349pt too wide) in paragraph at lines 621--633
  [] 
  []
 
 [13
 
 ]
-Overfull \hbox (40.79303pt too wide) in paragraph at lines 733--735
+Overfull \hbox (40.79303pt too wide) in paragraph at lines 743--745
 []\OT1/cmr/m/n/10 (-20) If full-time and \OT1/cmtt/m/n/10 salaire[]base[]mois[]complet = 0\OT1/cmr/m/n/10 (-20) : \OT1/cmtt/m/n/10 monthly[]wage = salaire[]base $\OMS/cmsy/m/n/10 ^^B\OT1/cmr/m/n/10 (-20) 30\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 (-20) 4375 \OML/cmm/m/it/10 = []$\OT1/cmr/m/n/10 (-20) . 
  []
+
+
+Package natbib Warning: There were undefined citations.
 
 [14] (./Final.aux)
  ***********
@@ -635,18 +647,18 @@ Package rerunfilecheck Info: File `Final.out' has not changed.
 (rerunfilecheck)             Checksum: 27E400740A6217EEF9CF61CB0157E5BC;677.
  ) 
 Here is how much of TeX's memory you used:
- 15272 strings out of 474116
- 242701 string characters out of 5743682
+ 15301 strings out of 474116
+ 243108 string characters out of 5743682
  1947187 words of memory out of 5000000
- 37198 multiletter control sequences out of 15000+600000
- 577116 words of font info for 177 fonts, out of 8000000 for 9000
+ 37214 multiletter control sequences out of 15000+600000
+ 577281 words of font info for 181 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,13n,79p,1268b,535s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Final.pdf (14 pages, 2576200 bytes).
+Output written on Final.pdf (14 pages, 2581386 bytes).
 PDF statistics:
- 320 PDF objects out of 1000 (max. 8388607)
- 232 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
+ 344 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
+ 59 named destinations out of 1000 (max. 500000)
  44136 words of extra memory for PDF output out of 51595 (max. 10000000)
 
