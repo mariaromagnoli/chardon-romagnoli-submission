@@ -132,6 +132,8 @@ Our analysis relies on 20,172,936 contracts signed from to 2019-2025, associated
 
 \noindent French workers tend to be younger and more educated, while non-EEA are older and more experienced, yet earn less (Table~\ref{tab:balance_2021}). EEA workers record the shortest employment histories and the lowest diploma rates, while earning the highest average wage. This pattern is likely driven by occupational sorting.
 
+\noindent Listed and unlisted occupations differ systematically within each group. Listed workers are older and more likely to be in full-time employment. Generally, within each nationality group, listed occupations pay more at the median than unlisted ones (Appendix A, Figure \ref{wage}). This is consistent with a \textit{"shortage premium"}, and with listed occupations being concentrated in skilled trades. For non-EEA workers, this listed median advantage is smaller. Non-EEA workers in listed cells earned slightly less than those in unlisted cells in 2021 (€1,364 vs.\ €1,393), a pattern that reversed in 2025 (€1,537 vs.\ €1,326) (Table \ref{tab:balance_2021} and Appendix A, Table \ref{tab:balance_2025}).
+
 \begin{table}[h]
 \caption{Balance characteristics - 2021 cohort}
 \vspace{0.3cm}
@@ -160,8 +162,6 @@ listed and unlisted cells within each nationality group ($^{***}p<0.01$, $^{**}p
 \end{tabular}
 \end{table}
 \FloatBarrier
-
-\noindent Listed and unlisted occupations differ systematically within each group. Listed workers are older and more likely to be in full-time employment. Generally, within each nationality group, listed occupations pay more at the median than unlisted ones (Appendix A, Figure \ref{wage}). This is consistent with a \textit{"shortage premium"}, and with listed occupations being concentrated in skilled trades. For non-EEA workers, this listed median advantage is smaller. Non-EEA workers in listed cells earned slightly less than those in unlisted cells in 2021 (€1,364 vs.\ €1,393), a pattern that reversed in 2025 (€1,537 vs.\ €1,326) (Table \ref{tab:balance_2021} and Appendix A, Table \ref{tab:balance_2025}).
 
 \noindent In 2021, EEA workers were relatively more concentrated in listed occupations (18\% of their contracts) relative to French (9\%) and non-EEA (10\%). By 2025, shares rose across groups, consistently with more occupations being listed (Appendix B, Table \ref{listing}). Non-EEA see the sharpest increase, with 31\% of their contracts in listed cells. This may reflect that the policy is channelling non-EEA hires into shortage sectors, or prior self-selection of non-EEA workers into occupations that were later listed. The second is likely to be true. Indeed, for the 2025 reform, the presence of non-EEA workers in a given occupation$\times$region was itself a listing criterion \citep{ParFr2025}. As we will see, this severely limits the interpretability of our 2025 estimates.
 \medskip
@@ -204,7 +204,7 @@ $\text{post}_{t}$ equals 1 after the reform date. Controls $\mathbf{X}_{it}$ inc
 
 \noindent We decided to run separate analyses for each reform, and severely limit the analysis window, to avoid using later-listed occupation*region cells as implicit controls for earlier cohorts. This is a documented source of bias in these staggered DiD settings \citep{Callaway2021,Sun2021}. This is why we construct separate "mini-panels", \textit{i.e.} windows of up to $18$ months around the studied reform, loosely inspired to what proposed by \citet{Cengiz2019,Baker2022}. 
 
-\noindent A similar risk is to use already-treated units as controls for later cohorts \citep{GoodmanBacon2021}. To limit this bias, occupations listed since 2008 are excluded from both groups. However, occupation$\times$region cells listed in 2021 remain in the 2025 control group while being already treated by then. Fixed effects may absorb their time-varying wage trajectory, but this does not eliminate the bias\footnote{Excluding 2021-listed cells from the 2025 control group would perhaps be a cleaner solution, but we were not sure of the implications. Reflection on this is left for future work.}.
+\noindent A similar risk is to use already-treated units as controls for later cohorts \citep{GoodmanBacon2021}. To limit this bias, occupations listed since 2008 are excluded from both groups. Due to a coding mistake, occupation$\times$region cells listed in 2021 and 2024 remained in the 2025 control group while being already treated by then. Fixed effects may absorb their time-varying wage trajectory, but this does not eliminate the bias.
 
 \noindent We have also performed Triple DiD regressions. We ultimately decided to exclude it from our analysis, due to its similar results and worse intepretability. 
 \medskip
@@ -233,7 +233,7 @@ $\text{post}_{t}$ equals 1 after the reform date. Controls $\mathbf{X}_{it}$ inc
 \noindent \textit{2021 results}
 \smallskip
 
-\noindent If employer bargaining power over non-EEA workers increases in listed sectors, we would expect \texttt{Treat$\,\times\,$Post$^{\text{non-EEA}} <$ Treat$\,\times\,$Post$^{\text{EEA}}$}. The point estimates go in the opposite direction (Table \ref{tab:did2021_fe3}). Both are insignificant. Results are consistent both in sign and magnitudes across fixed effect structures (Appendix C, Tables \ref{tab:did2021_fe1} and \ref{tab:did2021_fe2}).
+\noindent If employer bargaining power over non-EEA workers increases in listed sectors, we would expect \texttt{Treat$\,\times\,$Post$^{\text{non-EEA}} <$ Treat$\,\times\,$Post$^{\text{EEA}}$}. The point estimates go in the opposite direction (Table \ref{tab:did2021_fe3}). Both, as well as their differences\footnote{Tested via delta method, not included here.}, are insignificant. Results are consistent both in sign and magnitudes across fixed effect structures (Appendix C, Tables \ref{tab:did2021_fe1} and \ref{tab:did2021_fe2}).
 
 \noindent No significant composition effect is found for any group, suggesting selection bias is unlikely to explain the wage estimates (Table~\ref{tab:selection}).
 \medskip 
@@ -377,9 +377,9 @@ Observations & 590{,}448 & 6{,}492 & 9{,}692 \\
 
 \section{Conclusions}
 \smallskip
-\noindent We find no evidence of a monopsony effect. However, data misalignment and design constraints limited our analysis. Future work should correct data cleaning errors, remove previously treated occupations when studying subsequent waves, focus on similar occupations, and use different samples. Disentangling monopsony from hiring and competition effects requires alternative identification strategies.
+\noindent We find no evidence of a monopsony effect. However, data misalignment and design constraints limited our analysis. Future work should correct data cleaning errors, focus on occupations that are similar, and use different samples. Disentangling monopsony from hiring and competition effects requires alternative identification strategies.
 
-\noindent Even we found no effect, we like to think our small contribution consists in our framework. Given Europe's demographic decline, labor economics research on migrant work should shift from assessing native wage impacts to understanding how to  attract and retain essential workers under fair and competitive conditions.
+\noindent Even we found no effect, we like to think our small contribution consists in our framework. Given Europe's demographic decline, labor economics research on migration should shift from assessing native wage impacts to understanding how to attract and retain people under fair and competitive conditions.
 \clearpage
 \bibliography{biblio.bib}
 \bibliographystyle{apalike}
