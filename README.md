@@ -68,7 +68,7 @@ Run scripts in the following order. Steps C–D require SAS; all others require 
 | B | `02 Cleaning/03 Shortage List + FAP PCS Match.R` | `shortage_list.csv`, DARES ODS | `fap_to_pcs.csv` |
 | C | `02 Cleaning/01 FH Cleaning.sas` | FH raw | `fh_latest.csv`, `unique_ids.csv` |
 | D | `02 Cleaning/02 MMO Cleaning.sas` | MMO raw | `mmo_latest.csv` |
-| E | `02 Cleaning/04 Parquet + Final Cleaning.R` | all CSVs | `mmo_latest_wage.parquet` |
+| E | `02 Cleaning/04 Parquet + Final Cleaning.R` | all CSVs | all parquets |
 | F | `04 Analysis/01 DiD.R` | all parquets | regression tables + event study figures |
 | G | `04 Analysis/02 Robustness.R` | all parquets | robustness checks |
 
